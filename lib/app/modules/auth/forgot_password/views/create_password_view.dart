@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:save_key/app/modules/auth/forgot_password/views/verify_otp_view.dart';
+import 'package:save_key/app/modules/auth/forgot_password/views/reset_success_view.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_images/app_images.dart';
@@ -10,10 +9,9 @@ import '../../../../../common/app_text_style/styles.dart';
 import '../../../../../common/size_box/custom_sizebox.dart';
 import '../../../../../common/widgets/custom_button.dart';
 import '../../../../../common/widgets/custom_textfield.dart';
-import '../controllers/forgot_password_controller.dart';
 
-class ForgotPasswordView extends GetView<ForgotPasswordController> {
-  const ForgotPasswordView({super.key});
+class CreatePasswordView extends GetView {
+  const CreatePasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +21,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
         backgroundColor: AppColors.white,
         scrolledUnderElevation: 0,
         title: Text(
-          'Forgot password',
+          'Create a password',
           style: appBarStyle,
         ),
         leading: GestureDetector(
@@ -37,29 +35,46 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20).r,
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               sh12,
               Text(
-                'Please enter your email address which was used to create your account ',
+                'Please create and enter a new password for your account',
                 style: h5.copyWith(color: AppColors.grey),
               ),
-              sh30,
+              sh16,
               Text(
-                'Email',
+                'New password',
                 style: h4,
               ),
-              sh8,
+              sh12,
               CustomTextField(
-                hintText: 'Enter your email',
+                hintText: '**********',
+                sufIcon: Image.asset(
+                  AppImages.eyeClose,
+                  scale: 4,
+                ),
               ),
-              sh30,
+              sh16,
+              Text(
+                'Confirm New Password',
+                style: h4,
+              ),
+              sh12,
+              CustomTextField(
+                sufIcon: Image.asset(
+                  AppImages.eyeClose,
+                  scale: 4,
+                ),
+                hintText: '**********',
+              ),
+              sh16,
               CustomButton(
-                text: 'Send Code',
+                text: 'Update',
                 onPressed: () {
-                  Get.to(() => VerifyOtpView());
+                  Get.offAll(() => ResetSuccessView());
                 },
                 gradientColors: AppColors.buttonColor,
               ),

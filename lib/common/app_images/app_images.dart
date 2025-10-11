@@ -65,6 +65,8 @@ class AppImages {
 
   static const member = "assets/icons/member.png";
   static const business = "assets/icons/business.png";
+  static const google = "assets/icons/google.png";
+  static const apple = "assets/icons/apple.png";
 
 
   //================ Images ==================>
@@ -76,7 +78,7 @@ class AppImages {
   static const onboardingImageThree = "assets/images/onboarding 3.png";
   static const onboardingBack = "assets/images/onboarding back.png";
   //static const verifySuccess = "assets/images/verify success.png";
-  static const paymentSuccess = "assets/images/payment success.png";
+  static const success = "assets/images/payment success.png";
   static const offerImage = "assets/images/nike.png";
 
 

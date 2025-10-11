@@ -8,6 +8,7 @@ class AppColors {
   static const textColor = Color(0xff409E7A);
   static const blueTurquoise = Color(0xff00AEEF);
   static const blurBack = Color(0x8D8D8D6B);
+  static const textFieldBag = Color(0xFFF3F3F5);
   static const bottomBarText = Color(0xFFDE54B1);
   static const gradientColor = [Color(0xff6ECC96), Color(0xff0BE4F3), Color(0xff57C78F)];
   static const authBackColor = [Color(0xffF9FAFC), Color(0xffFBF6EA)];

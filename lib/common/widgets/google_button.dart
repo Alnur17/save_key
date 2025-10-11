@@ -15,7 +15,7 @@ class GoogleButton extends StatelessWidget {
     required this.assetPath,
     required this.label,
     required this.onTap,
-    this.borderColor = AppColors.borderColor,
+    this.borderColor = AppColors.greenNormal,
   });
 
   @override
