@@ -14,10 +14,20 @@ import '../modules/auth/signup/bindings/signup_binding.dart';
 import '../modules/auth/signup/views/signup_view.dart';
 import '../modules/auth/splash/bindings/splash_binding.dart';
 import '../modules/auth/splash/views/splash_view.dart';
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
-import '../modules/profile/bindings/profile_binding.dart';
-import '../modules/profile/views/profile_view.dart';
+import '../modules/member/account/bindings/account_binding.dart';
+import '../modules/member/account/views/account_view.dart';
+import '../modules/member/dashboard/bindings/dashboard_binding.dart';
+import '../modules/member/dashboard/views/dashboard_view.dart';
+import '../modules/member/favorite/bindings/favorite_binding.dart';
+import '../modules/member/favorite/views/favorite_view.dart';
+import '../modules/member/home/bindings/home_binding.dart';
+import '../modules/member/home/views/home_view.dart';
+import '../modules/member/savings/bindings/savings_binding.dart';
+import '../modules/member/savings/views/savings_view.dart';
+import '../modules/member/subscription_plan/bindings/subscription_plan_binding.dart';
+import '../modules/member/subscription_plan/views/subscription_plan_view.dart';
+import '../modules/local_business/setup_your_business/bindings/setup_your_business_binding.dart';
+import '../modules/local_business/setup_your_business/views/setup_your_business_view.dart';
 
 part 'app_routes.dart';
 
@@ -31,11 +41,6 @@ class AppPages {
       name: _Paths.HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
-    ),
-    GetPage(
-      name: _Paths.PROFILE,
-      page: () => const ProfileView(),
-      binding: ProfileBinding(),
     ),
     GetPage(
       name: _Paths.LOGIN,
@@ -71,6 +76,36 @@ class AppPages {
       name: _Paths.AUTH_LANDING,
       page: () => const AuthLandingView(),
       binding: AuthLandingBinding(),
+    ),
+    GetPage(
+      name: _Paths.SUBSCRIPTION_PLAN,
+      page: () => const SubscriptionPlanView(),
+      binding: SubscriptionPlanBinding(),
+    ),
+    GetPage(
+      name: _Paths.DASHBOARD,
+      page: () => const DashboardView(),
+      binding: DashboardBinding(),
+    ),
+    GetPage(
+      name: _Paths.ACCOUNT,
+      page: () => const AccountView(),
+      binding: AccountBinding(),
+    ),
+    GetPage(
+      name: _Paths.SAVINGS,
+      page: () => const SavingsView(),
+      binding: SavingsBinding(),
+    ),
+    GetPage(
+      name: _Paths.FAVORITE,
+      page: () => const FavoriteView(),
+      binding: FavoriteBinding(),
+    ),
+    GetPage(
+      name: _Paths.SETUP_YOUR_BUSINESS,
+      page: () => const SetupYourBusinessView(),
+      binding: SetupYourBusinessBinding(),
     ),
   ];
 }

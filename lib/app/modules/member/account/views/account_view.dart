@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/profile_controller.dart';
+import '../controllers/account_controller.dart';
 
-class ProfileView extends GetView<ProfileController> {
-  const ProfileView({super.key});
+class AccountView extends GetView<AccountController> {
+  const AccountView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ProfileView'),
+        title: const Text('AccountView'),
         centerTitle: true,
       ),
       body: const Center(
         child: Text(
-          'ProfileView is working',
+          'AccountView is working',
           style: TextStyle(fontSize: 20),
         ),
       ),

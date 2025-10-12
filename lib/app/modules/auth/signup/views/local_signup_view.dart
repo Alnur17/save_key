@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:save_key/app/modules/auth/login/views/login_view.dart';
-import 'package:save_key/app/modules/auth/signup/views/add_profile_picture_view.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_images/app_images.dart';
@@ -13,11 +12,10 @@ import '../../../../../common/size_box/custom_sizebox.dart';
 import '../../../../../common/widgets/custom_button.dart';
 import '../../../../../common/widgets/custom_textfield.dart';
 import '../../../../../common/widgets/google_button.dart';
-import '../controllers/signup_controller.dart';
+import 'add_profile_picture_view.dart';
 
-class SignupView extends GetView<SignupController> {
-  const SignupView({super.key});
-
+class LocalSignupView extends GetView {
+  const LocalSignupView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,12 +55,12 @@ class SignupView extends GetView<SignupController> {
               ),
               sh20,
               Text(
-                'User Name',
+                'Business Name',
                 style: h3.copyWith(fontWeight: FontWeight.w500),
               ),
               sh8,
               CustomTextField(
-                hintText: 'Enter your name',
+                hintText: 'Enter business name',
               ),
               sh12,
               Text(
@@ -71,16 +69,16 @@ class SignupView extends GetView<SignupController> {
               ),
               sh8,
               CustomTextField(
-                hintText: 'Enter your email',
+                hintText: 'Enter email',
               ),
               sh12,
               Text(
-                'Phone Number',
+                'Owner Contact',
                 style: h3.copyWith(fontWeight: FontWeight.w500),
               ),
               sh8,
               CustomTextField(
-                hintText: 'Enter your number',
+                hintText: 'Enter number',
               ),
               sh12,
               Text(

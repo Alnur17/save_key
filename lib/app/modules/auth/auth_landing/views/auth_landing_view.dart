@@ -11,6 +11,7 @@ import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/app_text_style/styles.dart';
 import '../../../../../common/size_box/custom_sizebox.dart';
 import '../../../../../common/widgets/custom_button.dart';
+import '../../signup/views/local_signup_view.dart';
 import '../controllers/auth_landing_controller.dart';
 
 class AuthLandingView extends GetView<AuthLandingController> {
@@ -50,7 +51,8 @@ class AuthLandingView extends GetView<AuthLandingController> {
             CustomButton(
               text: 'Sign Up',
               onPressed: () {
-                Get.to(() => SignupView());
+                //et.to(() => SignupView());
+                Get.to(() => LocalSignupView());
               },
               backgroundColor: AppColors.white,
               borderColor: AppColors.greenNormal,

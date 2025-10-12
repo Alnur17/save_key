@@ -26,12 +26,10 @@ class AppImages {
   static const gallery = "assets/icons/gallery.png";
   static const galleryFilled = "assets/icons/gallery filled.png";
   static const home = "assets/icons/home.png";
-  static const homeFilled = "assets/icons/home filled.png";
-  static const profile = "assets/icons/profile.png";
-  static const profileFilled = "assets/icons/profile filled.png";
+  static const profile = "assets/icons/account.png";
   static const tags = "assets/icons/tag.png";
   static const tagsFilled = "assets/icons/tags filled.png";
-  static const favorite = "assets/icons/favorite.png";
+  static const favorite = "assets/icons/bookmark.png";
   static const favoriteFilled = "assets/icons/favorite filled.png";
   static const favoriteUnlocked = "assets/icons/favourite unlock.png";
   static const language = "assets/icons/language.png";
@@ -67,6 +65,7 @@ class AppImages {
   static const business = "assets/icons/business.png";
   static const google = "assets/icons/google.png";
   static const apple = "assets/icons/apple.png";
+  static const savings = "assets/icons/savings.png";
 
 
   //================ Images ==================>
@@ -79,6 +78,7 @@ class AppImages {
   static const onboardingBack = "assets/images/onboarding back.png";
   //static const verifySuccess = "assets/images/verify success.png";
   static const success = "assets/images/payment success.png";
+  static const approveImage = "assets/images/approve image.png";
   static const offerImage = "assets/images/nike.png";
 
 

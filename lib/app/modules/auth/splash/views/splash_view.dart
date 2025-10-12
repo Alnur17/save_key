@@ -5,6 +5,7 @@ import 'package:save_key/app/modules/auth/onboarding/views/onboarding_view.dart'
 
 import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/widgets/custom_background_color.dart';
+import '../../onboarding/views/local_onboading_view.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -19,7 +20,8 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      Get.offAll(()=> OnboardingView());
+      //Get.offAll(()=> OnboardingView());
+      Get.offAll(()=> LocalOnboardingView());
     });
   }
   
