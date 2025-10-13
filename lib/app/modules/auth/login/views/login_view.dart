@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:save_key/app/modules/member/dashboard/views/dashboard_view.dart';
 import 'package:save_key/common/widgets/custom_textfield.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
@@ -107,7 +108,7 @@ class LoginView extends GetView<LoginController> {
               CustomButton(
                 text: 'Sign In',
                 onPressed: () {
-                  //Get.to(()=> AuthLandingView());
+                  Get.to(()=> DashboardView());
                 },
                 gradientColors: AppColors.buttonColor,
               ),

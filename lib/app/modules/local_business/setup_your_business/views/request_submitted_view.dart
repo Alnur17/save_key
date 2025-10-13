@@ -22,6 +22,14 @@ class RequestSubmittedView extends GetView {
           'Request Submitted',
           style: appBarStyle,
         ),
+        leading: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Image.asset(
+              AppImages.back,
+              scale: 4,
+            )),
       ),
       body: Center(
         child: Padding(

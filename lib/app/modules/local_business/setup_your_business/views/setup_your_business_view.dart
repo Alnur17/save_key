@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:save_key/app/modules/auth/auth_landing/views/auth_landing_view.dart';
+import 'package:save_key/app/modules/local_business/setup_your_business/views/request_submitted_view.dart';
 import 'package:save_key/common/app_color/app_colors.dart';
 import 'package:save_key/common/app_text_style/styles.dart';
 import 'package:save_key/common/widgets/custom_button.dart';
@@ -12,8 +12,10 @@ import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/size_box/custom_sizebox.dart';
 import '../controllers/setup_your_business_controller.dart';
 
-class SetupYourBusinessView extends GetView<SetupYourBusinessController> {
-  const SetupYourBusinessView({super.key});
+class SetupYourBusinessView extends StatelessWidget {
+  SetupYourBusinessView({super.key});
+
+  final controller = Get.put(SetupYourBusinessController());
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +99,36 @@ class SetupYourBusinessView extends GetView<SetupYourBusinessController> {
                 ],
               ),
               sh20,
+              Text('Category', style: h3),
+              sh8,
+              Obx(
+                () => Wrap(
+                  spacing: 10,
+                  runSpacing: 8,
+                  children: controller.categories.map((category) {
+                    final isSelected =
+                        controller.selectedCategory.value == category;
+                    return ChoiceChip(
+                      label: Text(
+                        category,
+                        style: h5.copyWith(
+                          color: isSelected ? Colors.white : Colors.black87,
+                        ),
+                      ),
+                      showCheckmark: false,
+                      selected: isSelected,
+                      onSelected: (_) => controller.selectCategory(category),
+                      selectedColor: AppColors.greenNormal,
+                      backgroundColor: AppColors.textFieldBag,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        side: BorderSide.none,
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
+              sh20,
               Text(
                 'Website',
                 style: h3,
@@ -123,11 +155,15 @@ class SetupYourBusinessView extends GetView<SetupYourBusinessController> {
               CustomTextField(
                 hintText: 'www.facebook.com/username',
               ),
+              sh20,
               CustomButton(
                 text: 'Request',
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(()=> RequestSubmittedView());
+                },
                 gradientColors: AppColors.buttonColor,
               ),
+              sh20,
             ],
           ),
         ),

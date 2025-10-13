@@ -1,23 +1,14 @@
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  final categories = ["Featured", "New", "Near by me"];
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  // selected category
+  var selectedCategory = "Featured".obs;
+
+
+  void selectCategory(String category) {
+    selectedCategory.value = category;
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

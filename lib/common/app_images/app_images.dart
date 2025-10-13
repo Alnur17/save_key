@@ -66,6 +66,14 @@ class AppImages {
   static const google = "assets/icons/google.png";
   static const apple = "assets/icons/apple.png";
   static const savings = "assets/icons/savings.png";
+  static const calender = "assets/icons/calender.png";
+  static const clock = "assets/icons/clock.png";
+  static const details = "assets/icons/details.png";
+  static const discount = "assets/icons/discount.png";
+  static const location = "assets/icons/location.png";
+  static const scanner = "assets/icons/scanner.png";
+  static const bookmarkCircle = "assets/icons/bookmark circle.png";
+  static const bookmarkCircleFilled = "assets/icons/bookmark circle filled.png";
 
 
   //================ Images ==================>
@@ -76,10 +84,10 @@ class AppImages {
   static const onboardingImageTwo = "assets/images/onboarding 2.png";
   static const onboardingImageThree = "assets/images/onboarding 3.png";
   static const onboardingBack = "assets/images/onboarding back.png";
-  //static const verifySuccess = "assets/images/verify success.png";
   static const success = "assets/images/payment success.png";
   static const approveImage = "assets/images/approve image.png";
   static const offerImage = "assets/images/nike.png";
+  static const foodImage = "https://plus.unsplash.com/premium_photo-1675252369719-dd52bc69c3df?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687";
 
 
   static const profileImage = 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';

@@ -5,8 +5,13 @@ import 'custom_textfield.dart';
 
 class SearchFiled extends StatelessWidget {
   final ValueChanged<String> onChanged;
+  final String hintText;
 
-  const SearchFiled({super.key, required this.onChanged});
+  const SearchFiled({
+    super.key,
+    required this.onChanged,
+    this.hintText = 'Looking for...',
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +19,7 @@ class SearchFiled extends StatelessWidget {
       borderColor: AppColors.transparent,
       containerColor: AppColors.bottomNavbar,
       onChange: onChanged,
-      hintText: 'Search...',
-      borderRadius: 12,
+      hintText: hintText,
       preIcon: Image.asset(
         AppImages.search,
         scale: 4,

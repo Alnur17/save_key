@@ -17,6 +17,7 @@ class CustomTextField extends StatelessWidget {
   final bool obscureText;
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
+  final bool isEditable;
 
   const CustomTextField({
     super.key,
@@ -33,6 +34,7 @@ class CustomTextField extends StatelessWidget {
     this.obscureText = false,
     this.keyboardType,
     this.inputFormatters,
+    this.isEditable = true,
   });
 
   @override
@@ -45,6 +47,7 @@ class CustomTextField extends StatelessWidget {
         color: containerColor ?? AppColors.textFieldBag,
       ),
       child: TextField(
+        enabled: isEditable,
         textInputAction: TextInputAction.done,
         onChanged: onChange,
         controller: controller,

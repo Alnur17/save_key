@@ -1,23 +1,19 @@
 import 'package:get/get.dart';
 
 class SetupYourBusinessController extends GetxController {
+  final categories = [
+    'All',
+    'Furniture',
+    'Clothing',
+    'Electronics',
+    'Food',
+    'Others',
+  ];
 
+  // default selected
+  var selectedCategory = 'Clothing'.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void selectCategory(String category) {
+    selectedCategory.value = category;
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
