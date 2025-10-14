@@ -65,13 +65,18 @@ class AppImages {
   static const business = "assets/icons/business.png";
   static const google = "assets/icons/google.png";
   static const apple = "assets/icons/apple.png";
+  static const facebookSmall = "assets/icons/facebook small.png";
+  static const linkedInSmall = "assets/icons/linkedIn small.png";
   static const savings = "assets/icons/savings.png";
+  static const save = "assets/icons/save.png";
   static const calender = "assets/icons/calender.png";
   static const clock = "assets/icons/clock.png";
   static const details = "assets/icons/details.png";
   static const discount = "assets/icons/discount.png";
   static const location = "assets/icons/location.png";
+  static const website = "assets/icons/website.png";
   static const scanner = "assets/icons/scanner.png";
+  static const scannerSmall = "assets/icons/scanner small.png";
   static const bookmarkCircle = "assets/icons/bookmark circle.png";
   static const bookmarkCircleFilled = "assets/icons/bookmark circle filled.png";
 
