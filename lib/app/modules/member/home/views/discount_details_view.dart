@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:save_key/app/modules/member/home/views/qr_code_view.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_images/app_images.dart';
@@ -71,7 +72,13 @@ class DiscountDetailsView extends GetView {
                         ),
                         color: AppColors.greenLight,
                       ),
-                      child: Text('Saved \$20', style: h5),
+                      child: Text(
+                        'Saved \$20',
+                        style: h5.copyWith(
+                          color: AppColors.greenNormal,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -208,7 +215,12 @@ class DiscountDetailsView extends GetView {
                     sh20,
                     CustomButton(
                       text: 'QR Generate',
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => QrCodeView(
+                              data: 'D-VG 458706',
+                              label: 'D-VG 458706',
+                            ));
+                      },
                       imageAssetPath: AppImages.scannerSmall,
                       centerImageWithText: true,
                       gradientColors: AppColors.buttonColor,

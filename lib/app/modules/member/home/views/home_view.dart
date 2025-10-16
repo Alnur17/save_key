@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:save_key/app/modules/member/home/views/discount_details_view.dart';
 import 'package:save_key/app/modules/member/home/views/my_search_view.dart';
 import 'package:save_key/app/modules/member/home/views/notifications_view.dart';
+import 'package:save_key/app/modules/member/home/views/qr_code_view.dart';
 import 'package:save_key/common/size_box/custom_sizebox.dart';
 import 'package:save_key/common/widgets/custom_textfield.dart';
 
@@ -169,7 +170,12 @@ class _HomeViewState extends State<HomeView> {
                   onDetailsTap: () {
                     Get.to(()=> DiscountDetailsView());
                   },
-                  onScannerTap: () {},
+                  onScannerTap: () {
+                    Get.to(() => QrCodeView(
+                      data: 'D-VG 458706',
+                      label: 'D-VG 458706',
+                    ));
+                  },
                   onBookmarkTap: () {},
                   onViewTap: () {},
                 ),

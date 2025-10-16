@@ -89,7 +89,13 @@ class DealCard extends StatelessWidget {
                     ),
                     color: AppColors.greenLight,
                   ),
-                  child: Text(savedAmount, style: h5),
+                  child: Text(
+                    savedAmount,
+                    style: h5.copyWith(
+                      color: AppColors.greenNormal,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ],

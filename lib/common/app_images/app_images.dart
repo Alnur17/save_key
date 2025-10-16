@@ -62,9 +62,12 @@ class AppImages {
 
 
   static const member = "assets/icons/member.png";
+  static const status = "assets/icons/status.png";
+  static const use = "assets/icons/use.png";
   static const business = "assets/icons/business.png";
   static const google = "assets/icons/google.png";
   static const apple = "assets/icons/apple.png";
+  static const code = "assets/icons/code.png";
   static const facebookSmall = "assets/icons/facebook small.png";
   static const linkedInSmall = "assets/icons/linkedIn small.png";
   static const savings = "assets/icons/savings.png";
