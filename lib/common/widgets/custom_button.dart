@@ -73,7 +73,7 @@ class CustomButton extends StatelessWidget {
                 scale: 4,
                 color: iconColor,
               ),
-              sw12,
+              sw5,
             ],
             Text(
               text,

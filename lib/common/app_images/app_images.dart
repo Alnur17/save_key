@@ -64,6 +64,7 @@ class AppImages {
   static const member = "assets/icons/member.png";
   static const status = "assets/icons/status.png";
   static const use = "assets/icons/use.png";
+  static const arrowUpDown = "assets/icons/arrow up down.png";
   static const business = "assets/icons/business.png";
   static const google = "assets/icons/google.png";
   static const apple = "assets/icons/apple.png";
@@ -72,6 +73,10 @@ class AppImages {
   static const linkedInSmall = "assets/icons/linkedIn small.png";
   static const savings = "assets/icons/savings.png";
   static const save = "assets/icons/save.png";
+  static const avgSaving = "assets/icons/avg saving.png";
+  static const dealRedeem = "assets/icons/deal redeem.png";
+  static const totalSave = "assets/icons/total save.png";
+  static const totalVisit = "assets/icons/total visit.png";
   static const calender = "assets/icons/calender.png";
   static const clock = "assets/icons/clock.png";
   static const details = "assets/icons/details.png";
