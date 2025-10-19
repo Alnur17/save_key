@@ -14,6 +14,7 @@ import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/app_text_style/styles.dart';
 import '../../../../../common/helper/custom_filter_chip.dart';
+import '../../../../../common/helper/custom_profile_image.dart';
 import '../../../../../common/helper/deal_card.dart';
 import '../../../../../common/helper/filter_dialog.dart';
 import '../controllers/home_controller.dart';
@@ -41,21 +42,7 @@ class _HomeViewState extends State<HomeView> {
           children: [
             Row(
               children: [
-                Container(
-                  height: 60,
-                  width: 60,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: AppColors.greenLight,
-                        width: 3,
-                      ),
-                      borderRadius: BorderRadius.circular(100)),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(100),
-                    child:
-                        CachedNetworkImage(imageUrl: AppImages.profileImageTwo),
-                  ),
-                ),
+                CustomProfileImage(imageUrl: AppImages.profileImageTwo,size: 60,),
                 sw8,
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,7 +74,7 @@ class _HomeViewState extends State<HomeView> {
                     Get.to(()=> NotificationsView());
                   },
                   child: Image.asset(
-                    AppImages.notification,
+                    AppImages.notificationCircle,
                     scale: 4,
                   ),
                 ),

@@ -1,26 +1,17 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:save_key/app/modules/member/savings/controllers/savings_controller.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_text_style/styles.dart';
+import '../size_box/custom_sizebox.dart';
 
-class FavoriteCategoriesCard extends StatefulWidget {
-  const FavoriteCategoriesCard({super.key});
+class FavoriteCategoriesCard extends GetView {
+  FavoriteCategoriesCard({super.key});
 
-  @override
-  State<FavoriteCategoriesCard> createState() => _FavoriteCategoriesCardState();
-}
-
-class _FavoriteCategoriesCardState extends State<FavoriteCategoriesCard> {
-  String selectedPeriod = 'This year';
-
-  final List<Map<String, dynamic>> categories = [
-    {'name': 'Gym & Wellness', 'percent': 30, 'color': AppColors.green},
-    {'name': 'Retail', 'percent': 20, 'color': Colors.pink},
-    {'name': 'Food & Dining', 'percent': 40, 'color': Colors.cyan},
-    {'name': 'Entertainment', 'percent': 10, 'color': AppColors.purple},
-  ];
+  final SavingsController savingsController = Get.put(SavingsController());
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +32,7 @@ class _FavoriteCategoriesCardState extends State<FavoriteCategoriesCard> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          /// Title + Dropdown
+          // Header Row with Dropdown
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -49,69 +40,63 @@ class _FavoriteCategoriesCardState extends State<FavoriteCategoriesCard> {
                 'Favorite Categories',
                 style: h4.copyWith(fontWeight: FontWeight.w600),
               ),
-              Container(
-                padding:
-                EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+              Obx(() => Container(
+                padding: EdgeInsets.symmetric(
+                    horizontal: 10.w, vertical: 4.h),
                 decoration: BoxDecoration(
                   color: Colors.grey.shade100,
                   borderRadius: BorderRadius.circular(20.r),
                 ),
                 child: DropdownButton<String>(
-                  value: selectedPeriod,
+                  value: savingsController.selectedPeriod.value,
                   icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 18),
                   underline: const SizedBox(),
                   isDense: true,
-                  dropdownColor: Colors.white,
+                  dropdownColor: AppColors.white,
                   borderRadius: BorderRadius.circular(10.r),
                   items: ['This year', 'This month', 'This week']
                       .map((value) => DropdownMenuItem<String>(
                     value: value,
                     child: Text(
                       value,
-                      style: h5.copyWith(
-                        color: Colors.black,
-                      ),
+                      style: h5.copyWith(color: Colors.black),
                     ),
                   ))
                       .toList(),
                   onChanged: (value) {
-                    setState(() {
-                      selectedPeriod = value!;
-                    });
+                    if (value != null) {
+                      savingsController.selectedPeriod.value = value;
+                    }
                   },
                 ),
-              ),
+              )),
             ],
           ),
-          SizedBox(height: 16.h),
-
-          /// Pie Chart
+          sh16,
           SizedBox(
-            height: 180.h,
+            height: 200.h,
             child: PieChart(
               PieChartData(
-                sectionsSpace: 4.w,
+                //sectionsSpace: 4.w,
                 centerSpaceRadius: 0,
-                sections: categories
+                sections: savingsController.categories
                     .map(
                       (e) => PieChartSectionData(
                     color: e['color'],
                     value: e['percent'].toDouble(),
                     showTitle: false,
-                    radius: 50.r,
+                    radius: 90.r,
                   ),
                 )
                     .toList(),
               ),
             ),
           ),
-          SizedBox(height: 16.h),
-
-          /// Legends
+          sh16,
           Wrap(
             spacing: 16.w,
             runSpacing: 8.h,
-            children: categories
+            children: savingsController.categories
                 .map(
                   (e) => Row(
                 mainAxisSize: MainAxisSize.min,
@@ -120,10 +105,10 @@ class _FavoriteCategoriesCardState extends State<FavoriteCategoriesCard> {
                     radius: 6.r,
                     backgroundColor: e['color'],
                   ),
-                  SizedBox(width: 6.w),
+                  sw5,
                   Text(
                     '${e['name']}: ${e['percent']}%',
-                    style: h5.copyWith(fontWeight: FontWeight.w500),
+                    style: h5,
                   ),
                 ],
               ),

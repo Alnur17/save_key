@@ -29,7 +29,7 @@ class OnboardingPage extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 100.h,
+            bottom: 115.h,
             left: 0.w,
             right: 0.w,
             child: Container(

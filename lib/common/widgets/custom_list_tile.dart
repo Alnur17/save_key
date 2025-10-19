@@ -34,12 +34,15 @@ class CustomListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(bottom: 8),
       decoration: BoxDecoration(
-        //color: containerColor,
-        borderRadius: BorderRadius.circular(12),
+        color: containerColor,
+        borderRadius: BorderRadius.circular(30),
         //border: Border.all(color: borderColor ?? AppColors.silver),
       ),
       child: ListTile(
+        splashColor: AppColors.transparent,
+
         leading: Image.asset(
           leadingImage,
           scale: 4,
@@ -48,7 +51,7 @@ class CustomListTile extends StatelessWidget {
           children: [
             Text(
               title,
-              style: titleStyle ?? h5.copyWith(fontWeight: FontWeight.bold),
+              style: titleStyle ?? h5,
             ),
             const Spacer(),
             if (rightText != null) Text(rightText!, style: h3),

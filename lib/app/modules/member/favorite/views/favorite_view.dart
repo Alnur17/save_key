@@ -222,10 +222,11 @@ class FavoriteView extends GetView<FavoriteController> {
         backgroundColor: AppColors.white,
         scrolledUnderElevation: 0,
         title: Text('Favorite', style: appBarStyle),
-        leading: GestureDetector(
-          onTap: Get.back,
-          child: Image.asset(AppImages.back, scale: 4),
-        ),
+        titleSpacing: 20.w,
+        // leading: GestureDetector(
+        //   onTap: Get.back,
+        //   child: Image.asset(AppImages.back, scale: 4),
+        // ),
       ),
       body: ListView.builder(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12).r,

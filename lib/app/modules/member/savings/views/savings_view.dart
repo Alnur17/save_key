@@ -22,10 +22,11 @@ class SavingsView extends GetView<SavingsController> {
         backgroundColor: AppColors.white,
         scrolledUnderElevation: 0,
         title: Text('Personal Analytics', style: appBarStyle),
-        leading: GestureDetector(
-          onTap: Get.back,
-          child: Image.asset(AppImages.back, scale: 4),
-        ),
+        titleSpacing: 20.w,
+        // leading: GestureDetector(
+        //   onTap: Get.back,
+        //   child: Image.asset(AppImages.back, scale: 4),
+        // ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20).r,
@@ -135,7 +136,7 @@ class SavingsView extends GetView<SavingsController> {
               chartHeader: 'Yearly Visit Pattern',
             ),
             sh20,
-            const FavoriteCategoriesCard(),
+            FavoriteCategoriesCard(),
             sh20,
             YearlyChart(
               showDropdown: true,

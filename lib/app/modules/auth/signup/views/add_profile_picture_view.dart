@@ -12,6 +12,8 @@ import 'package:save_key/common/app_text_style/styles.dart';
 import 'package:save_key/common/size_box/custom_sizebox.dart';
 import 'package:save_key/common/widgets/custom_button.dart';
 
+import '../../../../../common/helper/custom_profile_image.dart';
+
 class AddProfilePictureView extends GetView {
   const AddProfilePictureView({super.key});
 
@@ -42,20 +44,7 @@ class AddProfilePictureView extends GetView {
               ),
             ),
             sh20,
-            Container(
-              height: 120,
-              width: 120,
-              decoration: BoxDecoration(
-                  border: Border.all(
-                    color: AppColors.greenLight,
-                    width: 3,
-                  ),
-                  borderRadius: BorderRadius.circular(100)),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(100),
-                child: CachedNetworkImage(imageUrl: AppImages.profileImageTwo),
-              ),
-            ),
+            CustomProfileImage(imageUrl: AppImages.profileImageTwo),
             Spacer(),
             CustomButton(
               text: 'Add Picture',

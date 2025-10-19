@@ -157,7 +157,7 @@ class _DashboardViewState extends State<DashboardView> {
         resizeToAvoidBottomInset: true,
         stateManagement: true,
         navBarStyle: NavBarStyle.style3,
-        navBarHeight: 70.h, // Taller navbar
+        navBarHeight: 75.h, // Taller navbar
       ),
     );
   }

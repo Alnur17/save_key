@@ -6,7 +6,8 @@ import '../app_color/app_colors.dart';
 import '../app_images/app_images.dart';
 import '../app_text_style/styles.dart';
 import '../size_box/custom_sizebox.dart';
-import '../widgets/custom_button.dart'; // for sh20, sw8, etc.
+import '../widgets/custom_button.dart';
+import 'custom_profile_image.dart'; // for sh20, sw8, etc.
 
 class DealCard extends StatelessWidget {
   final String mainImage;
@@ -106,21 +107,7 @@ class DealCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: AppColors.greenLight,
-                          width: 3,
-                        ),
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(100),
-                        child: CachedNetworkImage(imageUrl: profileImage),
-                      ),
-                    ),
+                    CustomProfileImage(imageUrl: profileImage,size: 40,),
                     sw8,
                     Expanded(
                       child: Text(

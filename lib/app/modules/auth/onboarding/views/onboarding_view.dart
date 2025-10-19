@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:save_key/app/modules/auth/chose_role/views/chose_role_view.dart';
 import 'package:save_key/common/app_images/app_images.dart';
+import 'package:save_key/common/size_box/custom_sizebox.dart';
 import 'package:save_key/common/widgets/custom_background_image.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -54,9 +55,8 @@ class _OnboardingViewState extends State<OnboardingView> {
                 ),
               ],
             ),
-            // Smooth Dot Indicator at the bottom
             Positioned(
-              bottom: 85,
+              bottom: 80,
               left: 0,
               right: 0,
               child: Center(

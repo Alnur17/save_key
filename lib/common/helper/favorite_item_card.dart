@@ -6,6 +6,7 @@ import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/app_text_style/styles.dart';
 import '../../../../../common/widgets/details_widget.dart';
+import 'custom_profile_image.dart';
 
 class FavoriteItemCard extends StatelessWidget {
   final String imageUrl;
@@ -69,10 +70,7 @@ class FavoriteItemCard extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        CircleAvatar(
-                          radius: 24,
-                          backgroundImage: CachedNetworkImageProvider(profileImage),
-                        ),
+                        CustomProfileImage(imageUrl: profileImage,size: 48,),
                         sw8,
                         Expanded(
                           child: Text(
