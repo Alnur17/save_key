@@ -14,6 +14,20 @@ import '../modules/auth/signup/bindings/signup_binding.dart';
 import '../modules/auth/signup/views/signup_view.dart';
 import '../modules/auth/splash/bindings/splash_binding.dart';
 import '../modules/auth/splash/views/splash_view.dart';
+import '../modules/local_business/deals/bindings/deals_binding.dart';
+import '../modules/local_business/deals/views/deals_view.dart';
+import '../modules/local_business/insights/bindings/insights_binding.dart';
+import '../modules/local_business/insights/views/insights_view.dart';
+import '../modules/local_business/local_business_account/bindings/local_business_account_binding.dart';
+import '../modules/local_business/local_business_account/views/local_business_account_view.dart';
+import '../modules/local_business/local_business_dashboard/bindings/local_business_dashboard_binding.dart';
+import '../modules/local_business/local_business_dashboard/views/local_business_dashboard_view.dart';
+import '../modules/local_business/local_business_home/bindings/local_business_home_binding.dart';
+import '../modules/local_business/local_business_home/views/local_business_home_view.dart';
+import '../modules/local_business/scan/bindings/scan_binding.dart';
+import '../modules/local_business/scan/views/scan_view.dart';
+import '../modules/local_business/setup_your_business/bindings/setup_your_business_binding.dart';
+import '../modules/local_business/setup_your_business/views/setup_your_business_view.dart';
 import '../modules/member/account/bindings/account_binding.dart';
 import '../modules/member/account/views/account_view.dart';
 import '../modules/member/dashboard/bindings/dashboard_binding.dart';
@@ -26,8 +40,6 @@ import '../modules/member/savings/bindings/savings_binding.dart';
 import '../modules/member/savings/views/savings_view.dart';
 import '../modules/member/subscription_plan/bindings/subscription_plan_binding.dart';
 import '../modules/member/subscription_plan/views/subscription_plan_view.dart';
-import '../modules/local_business/setup_your_business/bindings/setup_your_business_binding.dart';
-import '../modules/local_business/setup_your_business/views/setup_your_business_view.dart';
 
 part 'app_routes.dart';
 
@@ -106,6 +118,36 @@ class AppPages {
       name: _Paths.SETUP_YOUR_BUSINESS,
       page: () => SetupYourBusinessView(),
       binding: SetupYourBusinessBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOCAL_BUSINESS_DASHBOARD,
+      page: () => const LocalBusinessDashboardView(),
+      binding: LocalBusinessDashboardBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOCAL_BUSINESS_HOME,
+      page: () => const LocalBusinessHomeView(),
+      binding: LocalBusinessHomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.INSIGHTS,
+      page: () => const InsightsView(),
+      binding: InsightsBinding(),
+    ),
+    GetPage(
+      name: _Paths.SCAN,
+      page: () => const ScanView(),
+      binding: ScanBinding(),
+    ),
+    GetPage(
+      name: _Paths.DEALS,
+      page: () => const DealsView(),
+      binding: DealsBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOCAL_BUSINESS_ACCOUNT,
+      page: () => const LocalBusinessAccountView(),
+      binding: LocalBusinessAccountBinding(),
     ),
   ];
 }

@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-class LogoutView extends GetView {
-  const LogoutView({super.key});
+import '../controllers/insights_controller.dart';
+
+class InsightsView extends GetView<InsightsController> {
+  const InsightsView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LogoutView'),
+        title: const Text('InsightsView'),
         centerTitle: true,
       ),
       body: const Center(
         child: Text(
-          'LogoutView is working',
+          'InsightsView is working',
           style: TextStyle(fontSize: 20),
         ),
       ),

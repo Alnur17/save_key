@@ -7,7 +7,7 @@ class AppImages {
 
 
 
-
+  static const addCircle = "assets/icons/add circle.png";
   static const arrowRightBig = "assets/icons/arrow right big.png";
   static const arrowRightNormal = "assets/icons/Arrow right light.png";
   static const arrowLeftBack = "assets/icons/ArrowLeft.png";
@@ -44,7 +44,11 @@ class AppImages {
   static const checkBox = "assets/icons/checkbox.png";
   static const eyeClose = "assets/icons/eye close.png";
   static const eyeOpen = "assets/icons/eye.png";
+  static const scan = "assets/icons/scan.png";
+  static const insights = "assets/icons/insights.png";
+  static const deals = "assets/icons/deals.png";
   static const home = "assets/icons/home.png";
+  static const dashboard = "assets/icons/dashboard.png";
   static const profile = "assets/icons/account.png";
   static const favorite = "assets/icons/bookmark.png";
   static const favoriteFilled = "assets/icons/favorite filled.png";
@@ -61,6 +65,7 @@ class AppImages {
   static const subscriptionManage = "assets/icons/manage subscription.png";
   static const delete = "assets/icons/delete.png";
   static const deleteCircle = "assets/icons/delete circle.png";
+  static const editCircle = "assets/icons/edit circle.png";
   static const terms = "assets/icons/terms and conditions.png";
   static const privacy = "assets/icons/privacy and policy.png";
   static const notification = "assets/icons/notification.png";

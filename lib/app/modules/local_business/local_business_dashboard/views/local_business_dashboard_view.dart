@@ -2,33 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-import 'package:save_key/app/modules/member/account/views/account_view.dart';
-import 'package:save_key/common/app_text_style/styles.dart';
-import 'package:save_key/common/size_box/custom_sizebox.dart';
+import 'package:save_key/app/modules/local_business/deals/views/deals_view.dart';
+import 'package:save_key/app/modules/local_business/insights/views/insights_view.dart';
+import 'package:save_key/app/modules/local_business/local_business_home/views/local_business_home_view.dart';
+import 'package:save_key/app/modules/local_business/scan/views/scan_view.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_images/app_images.dart';
-import '../../favorite/views/favorite_view.dart';
-import '../../home/views/home_view.dart';
-import '../../savings/views/savings_view.dart';
+import '../../../../../common/app_text_style/styles.dart';
+import '../../../../../common/size_box/custom_sizebox.dart';
+import '../../local_business_account/views/local_business_account_view.dart';
 
-class DashboardView extends StatefulWidget {
-  const DashboardView({super.key});
+class LocalBusinessDashboardView
+    extends StatefulWidget {
+  const LocalBusinessDashboardView({super.key});
 
   @override
-  State<DashboardView> createState() => _DashboardViewState();
+  State<LocalBusinessDashboardView> createState() => _LocalBusinessDashboardViewState();
 }
 
-class _DashboardViewState extends State<DashboardView> {
+class _LocalBusinessDashboardViewState extends State<LocalBusinessDashboardView> {
   final PersistentTabController controller =
-      PersistentTabController(initialIndex: 0);
+  PersistentTabController(initialIndex: 0);
 
   List<Widget> _buildScreens() {
     return [
-      HomeView(),
-      FavoriteView(),
-      SavingsView(),
-      AccountView(),
+      LocalBusinessHomeView(),
+      DealsView(),
+      ScanView(),
+      InsightsView(),
+      LocalBusinessAccountView(),
     ];
   }
 
@@ -39,13 +42,13 @@ class _DashboardViewState extends State<DashboardView> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              AppImages.home,
+              AppImages.dashboard,
               scale: 4,
             ),
             sh5,
             Text(
-              "Home",
-              style: h5,
+              "Dashboard",
+              style: h6,
             ),
           ],
         ),
@@ -57,13 +60,13 @@ class _DashboardViewState extends State<DashboardView> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              AppImages.favorite,
+              AppImages.deals,
               scale: 4,
             ),
             sh5,
             Text(
-              "Favorite",
-              style: h5,
+              "Deals",
+              style: h6,
             ),
           ],
         ),
@@ -75,13 +78,31 @@ class _DashboardViewState extends State<DashboardView> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              AppImages.savings,
+              AppImages.scan,
               scale: 4,
             ),
             sh5,
             Text(
-              "Savings",
-              style: h5,
+              "Scan",
+              style: h6,
+            ),
+          ],
+        ),
+        activeColorPrimary: AppColors.greenNormal,
+        inactiveColorPrimary: AppColors.grey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              AppImages.insights,
+              scale: 4,
+            ),
+            sh5,
+            Text(
+              "Insights",
+              style: h6,
             ),
           ],
         ),
@@ -99,7 +120,7 @@ class _DashboardViewState extends State<DashboardView> {
             sh5,
             Text(
               "Account",
-              style: h5,
+              style: h6,
             ),
           ],
         ),

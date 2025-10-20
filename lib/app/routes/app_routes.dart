@@ -19,6 +19,12 @@ abstract class Routes {
   static const SAVINGS = _Paths.SAVINGS;
   static const FAVORITE = _Paths.FAVORITE;
   static const SETUP_YOUR_BUSINESS = _Paths.SETUP_YOUR_BUSINESS;
+  static const LOCAL_BUSINESS_DASHBOARD = _Paths.LOCAL_BUSINESS_DASHBOARD;
+  static const LOCAL_BUSINESS_HOME = _Paths.LOCAL_BUSINESS_HOME;
+  static const INSIGHTS = _Paths.INSIGHTS;
+  static const SCAN = _Paths.SCAN;
+  static const DEALS = _Paths.DEALS;
+  static const LOCAL_BUSINESS_ACCOUNT = _Paths.LOCAL_BUSINESS_ACCOUNT;
 }
 
 abstract class _Paths {
@@ -39,4 +45,10 @@ abstract class _Paths {
   static const SAVINGS = '/savings';
   static const FAVORITE = '/favorite';
   static const SETUP_YOUR_BUSINESS = '/setup-your-business';
+  static const LOCAL_BUSINESS_DASHBOARD = '/local-business-dashboard';
+  static const LOCAL_BUSINESS_HOME = '/local-business-home';
+  static const INSIGHTS = '/insights';
+  static const SCAN = '/scan';
+  static const DEALS = '/deals';
+  static const LOCAL_BUSINESS_ACCOUNT = '/local-business-account';
 }

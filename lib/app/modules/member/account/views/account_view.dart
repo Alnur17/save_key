@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:save_key/app/modules/member/account/views/subscription_view.dart';
 import 'package:save_key/app/modules/member/account/views/notification_manage_view.dart';
 import 'package:save_key/app/modules/member/account/views/privacy_and_policy_view.dart';
 import 'package:save_key/app/modules/member/account/views/terms_and_condition_view.dart';
@@ -62,33 +63,42 @@ class AccountView extends GetView<AccountController> {
               Center(
                 child: Obx(() {
                   final imagePath = accountController.profileImageUrl.value;
-                  return CircleAvatar(
-                    radius: 50,
-                    backgroundColor: AppColors.whiteDark,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(50),
-                      child: imagePath.startsWith("http")
-                          ? CachedNetworkImage(
-                              imageUrl: imagePath,
-                              height: Get.height.h,
-                              width: Get.width.w,
-                              fit: BoxFit.cover,
-                              placeholder: (context, url) => const Center(
-                                child: CircularProgressIndicator(
-                                  color: AppColors.greenLight,
+                  return Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        border: Border.all(
+                          color: AppColors.greenNormal,
+                          width: 2,
+                        )),
+                    child: CircleAvatar(
+                      radius: 50,
+                      backgroundColor: AppColors.whiteDark,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: imagePath.startsWith("http")
+                            ? CachedNetworkImage(
+                                imageUrl: imagePath,
+                                height: Get.height.h,
+                                width: Get.width.w,
+                                fit: BoxFit.cover,
+                                placeholder: (context, url) => const Center(
+                                  child: CircularProgressIndicator(
+                                    color: AppColors.greenLight,
+                                  ),
                                 ),
+                                errorWidget: (context, url, error) =>
+                                    const Icon(
+                                  Icons.error,
+                                  color: AppColors.red,
+                                ),
+                              )
+                            : Image.file(
+                                File(imagePath),
+                                height: Get.height.h,
+                                width: Get.width.w,
+                                fit: BoxFit.cover,
                               ),
-                              errorWidget: (context, url, error) => const Icon(
-                                Icons.error,
-                                color: AppColors.red,
-                              ),
-                            )
-                          : Image.file(
-                              File(imagePath),
-                              height: Get.height.h,
-                              width: Get.width.w,
-                              fit: BoxFit.cover,
-                            ),
+                      ),
                     ),
                   );
                 }),
@@ -112,7 +122,7 @@ class AccountView extends GetView<AccountController> {
               ),
               CustomListTile(
                 onTap: () {
-                  // Get.to(() => LanguageView());
+                  Get.to(() => SubscriptionView());
                 },
                 leadingImage: AppImages.subscription,
                 title: 'Subscription',
@@ -155,9 +165,7 @@ class AccountView extends GetView<AccountController> {
                   CustomPopup.show(
                     context: context,
                     title: "Are you sure you want to delete your profile?",
-                    onConfirm: () {
-
-                    },
+                    onConfirm: () {},
                   );
                 },
                 leadingImage: AppImages.delete,
