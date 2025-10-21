@@ -1,23 +1,23 @@
 import 'package:get/get.dart';
 
 class ScanController extends GetxController {
-  //TODO: Implement ScanController
+  var scannedValue = ''.obs;
+  var isScanned = false.obs;
+  var isScanning = false.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void startScanning() {
+    isScanning.value = true;
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void setScannedData(String value) {
+    scannedValue.value = value;
+    isScanned.value = true;
+    isScanning.value = false;
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  void resetScanner() {
+    scannedValue.value = '';
+    isScanned.value = false;
+    isScanning.value = false;
   }
-
-  void increment() => count.value++;
 }

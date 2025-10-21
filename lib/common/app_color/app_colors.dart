@@ -46,5 +46,6 @@ class AppColors {
   static const golden = Color(0xffFFD700);
   static const darkRed = Color(0xffBE080B);
   static const red = Color(0xffff3c00);
+  static const redLight = Color(0xfff3b8b8);
   static const purple = Color(0xff5366BE);
 }

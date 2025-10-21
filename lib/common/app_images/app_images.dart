@@ -31,14 +31,19 @@ class AppImages {
   static const logout = "assets/icons/logout.png";
   static const copy = "assets/icons/copy.png";
   static const view = "assets/icons/view.png";
-  static const call = "assets/icons/call.png";
-  static const email = "assets/icons/email.png";
   static const giftBox = "assets/icons/gift box.png";
   static const crownCircle = "assets/icons/crown circle.png";
   static const uploadImage = "assets/icons/upload image.png";
   static const cameraCircle = "assets/icons/camera circle.png";
   static const camera = "assets/icons/camera.png";
 
+
+  static const editBusinessProfile = "assets/icons/edit business profile.png";
+  static const call = "assets/icons/call.png";
+  static const edit = "assets/icons/edit.png";
+  static const pause = "assets/icons/pause.png";
+  static const email = "assets/icons/mail.png";
+  static const support = "assets/icons/support.png";
   static const arrowRight = "assets/icons/arrow right.png";
   static const editProfile = "assets/icons/edit profile.png";
   static const checkBox = "assets/icons/checkbox.png";
@@ -108,6 +113,8 @@ class AppImages {
   static const onboardingImageThree = "assets/images/onboarding 3.png";
   static const onboardingBack = "assets/images/onboarding back.png";
   static const success = "assets/images/payment success.png";
+  static const qrcode = "assets/images/qr-code.png";
+  static const scanImage = "assets/images/scan image.png";
   static const approveImage = "assets/images/approve image.png";
   static const foodImage = "https://plus.unsplash.com/premium_photo-1675252369719-dd52bc69c3df?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687";
 

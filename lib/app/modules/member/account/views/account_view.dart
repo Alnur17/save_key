@@ -23,7 +23,7 @@ import 'change_password_view.dart';
 import 'edit_profile_view.dart';
 import 'faq_view.dart';
 
-class AccountView extends GetView<AccountController> {
+class AccountView extends StatelessWidget {
   final bool showBackButton;
 
   AccountView({super.key, this.showBackButton = false});
@@ -53,142 +53,140 @@ class AccountView extends GetView<AccountController> {
             : null,
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              sh20,
-              Center(
-                child: Obx(() {
-                  final imagePath = accountController.profileImageUrl.value;
-                  return Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        border: Border.all(
-                          color: AppColors.greenNormal,
-                          width: 2,
-                        )),
-                    child: CircleAvatar(
-                      radius: 50,
-                      backgroundColor: AppColors.whiteDark,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: imagePath.startsWith("http")
-                            ? CachedNetworkImage(
-                                imageUrl: imagePath,
-                                height: Get.height.h,
-                                width: Get.width.w,
-                                fit: BoxFit.cover,
-                                placeholder: (context, url) => const Center(
-                                  child: CircularProgressIndicator(
-                                    color: AppColors.greenLight,
-                                  ),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            sh20,
+            Center(
+              child: Obx(() {
+                final imagePath = accountController.profileImageUrl.value;
+                return Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      border: Border.all(
+                        color: AppColors.greenNormal,
+                        width: 2,
+                      )),
+                  child: CircleAvatar(
+                    radius: 50,
+                    backgroundColor: AppColors.whiteDark,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(50),
+                      child: imagePath.startsWith("http")
+                          ? CachedNetworkImage(
+                              imageUrl: imagePath,
+                              height: Get.height.h,
+                              width: Get.width.w,
+                              fit: BoxFit.cover,
+                              placeholder: (context, url) => const Center(
+                                child: CircularProgressIndicator(
+                                  color: AppColors.greenLight,
                                 ),
-                                errorWidget: (context, url, error) =>
-                                    const Icon(
-                                  Icons.error,
-                                  color: AppColors.red,
-                                ),
-                              )
-                            : Image.file(
-                                File(imagePath),
-                                height: Get.height.h,
-                                width: Get.width.w,
-                                fit: BoxFit.cover,
                               ),
-                      ),
+                              errorWidget: (context, url, error) =>
+                                  const Icon(
+                                Icons.error,
+                                color: AppColors.red,
+                              ),
+                            )
+                          : Image.file(
+                              File(imagePath),
+                              height: Get.height.h,
+                              width: Get.width.w,
+                              fit: BoxFit.cover,
+                            ),
                     ),
-                  );
-                }),
-              ),
-              sh30,
-              CustomListTile(
-                onTap: () {
-                  Get.to(() => EditProfileView());
-                },
-                leadingImage: AppImages.editProfile,
-                title: 'Edit Profile',
-                trailingImage: AppImages.arrowRight,
-              ),
-              CustomListTile(
-                onTap: () {
-                  Get.to(() => ChangePasswordView());
-                },
-                leadingImage: AppImages.changePass,
-                title: 'Change  Password ',
-                trailingImage: AppImages.arrowRight,
-              ),
-              CustomListTile(
-                onTap: () {
-                  Get.to(() => SubscriptionView());
-                },
-                leadingImage: AppImages.subscription,
-                title: 'Subscription',
-                trailingImage: AppImages.arrowRight,
-              ),
-              CustomListTile(
-                onTap: () {
-                  Get.to(() => TermsAndConditionView());
-                },
-                leadingImage: AppImages.terms,
-                title: 'Terms and conditions',
-                trailingImage: AppImages.arrowRight,
-              ),
-              CustomListTile(
-                onTap: () {
-                  Get.to(() => PrivacyAndPolicyView());
-                },
-                leadingImage: AppImages.privacy,
-                title: 'Privacy and Policies',
-                trailingImage: AppImages.arrowRight,
-              ),
-              CustomListTile(
-                onTap: () {
-                  Get.to(() => FaqView());
-                },
-                leadingImage: AppImages.faq,
-                title: 'FAQ',
-                trailingImage: AppImages.arrowRight,
-              ),
-              CustomListTile(
-                onTap: () {
-                  Get.to(() => NotificationManageView());
-                },
-                leadingImage: AppImages.notification,
-                title: 'Notification Manage',
-                trailingImage: AppImages.arrowRight,
-              ),
-              CustomListTile(
-                onTap: () {
-                  CustomPopup.show(
-                    context: context,
-                    title: "Are you sure you want to delete your profile?",
-                    onConfirm: () {},
-                  );
-                },
-                leadingImage: AppImages.delete,
-                title: 'Delete Profile',
-                trailingImage: AppImages.arrowRight,
-              ),
-              CustomListTile(
-                onTap: () {
-                  CustomPopup.show(
-                    context: context,
-                    title: "Are you sure you want to log out of your profile?",
-                    onConfirm: () {
-                      Get.offAll(() => LoginView());
-                    },
-                  );
-                },
-                leadingImage: AppImages.editProfile,
-                title: 'Log Out',
-                trailingImage: AppImages.arrowRight,
-              ),
-              sh40,
-            ],
-          ),
+                  ),
+                );
+              }),
+            ),
+            sh30,
+            CustomListTile(
+              onTap: () {
+                Get.to(() => EditProfileView());
+              },
+              leadingImage: AppImages.editProfile,
+              title: 'Edit Profile',
+              trailingImage: AppImages.arrowRight,
+            ),
+            CustomListTile(
+              onTap: () {
+                Get.to(() => ChangePasswordView());
+              },
+              leadingImage: AppImages.changePass,
+              title: 'Change  Password ',
+              trailingImage: AppImages.arrowRight,
+            ),
+            CustomListTile(
+              onTap: () {
+                Get.to(() => SubscriptionView());
+              },
+              leadingImage: AppImages.subscription,
+              title: 'Subscription',
+              trailingImage: AppImages.arrowRight,
+            ),
+            CustomListTile(
+              onTap: () {
+                Get.to(() => TermsAndConditionView());
+              },
+              leadingImage: AppImages.terms,
+              title: 'Terms and conditions',
+              trailingImage: AppImages.arrowRight,
+            ),
+            CustomListTile(
+              onTap: () {
+                Get.to(() => PrivacyAndPolicyView());
+              },
+              leadingImage: AppImages.privacy,
+              title: 'Privacy and Policies',
+              trailingImage: AppImages.arrowRight,
+            ),
+            CustomListTile(
+              onTap: () {
+                Get.to(() => FaqView());
+              },
+              leadingImage: AppImages.faq,
+              title: 'FAQ',
+              trailingImage: AppImages.arrowRight,
+            ),
+            CustomListTile(
+              onTap: () {
+                Get.to(() => NotificationManageView());
+              },
+              leadingImage: AppImages.notification,
+              title: 'Notification Manage',
+              trailingImage: AppImages.arrowRight,
+            ),
+            CustomListTile(
+              onTap: () {
+                CustomPopup.show(
+                  context: context,
+                  title: "Are you sure you want to delete your profile?",
+                  onConfirm: () {},
+                );
+              },
+              leadingImage: AppImages.delete,
+              title: 'Delete Profile',
+              trailingImage: AppImages.arrowRight,
+            ),
+            CustomListTile(
+              onTap: () {
+                CustomPopup.show(
+                  context: context,
+                  title: "Are you sure you want to log out of your profile?",
+                  onConfirm: () {
+                    Get.offAll(() => LoginView());
+                  },
+                );
+              },
+              leadingImage: AppImages.editProfile,
+              title: 'Log Out',
+              trailingImage: AppImages.arrowRight,
+            ),
+            sh40,
+          ],
         ),
       ),
     );
