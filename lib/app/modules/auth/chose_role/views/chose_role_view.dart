@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:save_key/app/modules/auth/auth_landing/views/auth_landing_view.dart';
+import 'package:save_key/app/modules/auth/onboarding/views/local_onboading_view.dart';
+import 'package:save_key/app/modules/auth/onboarding/views/onboarding_view.dart';
 import 'package:save_key/common/app_color/app_colors.dart';
 import 'package:save_key/common/app_images/app_images.dart';
 import 'package:save_key/common/widgets/custom_button.dart';
@@ -69,7 +70,11 @@ class ChoseRoleView extends StatelessWidget {
               CustomButton(
                 text: 'Next',
                 onPressed: (){
-                  Get.to(()=> AuthLandingView());
+                  if (controller.selectedIndex.value == 0) {
+                    Get.to(() => OnboardingView());
+                  } else if (controller.selectedIndex.value == 1) {
+                    Get.to(() => LocalOnboardingView());
+                  }
                 },
                 gradientColors: AppColors.buttonColor,
               )

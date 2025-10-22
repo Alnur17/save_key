@@ -133,7 +133,7 @@ class LocalSignupView extends GetView {
               CustomButton(
                 text: 'Sign Up',
                 onPressed: () {
-                  Get.to(()=> AddProfilePictureView());
+                  Get.to(()=> AddProfilePictureView(isMember: false,));
                 },
                 gradientColors: AppColors.buttonColor,
               ),

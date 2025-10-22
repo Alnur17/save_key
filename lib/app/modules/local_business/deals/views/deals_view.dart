@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:save_key/app/modules/local_business/deals/views/create_deals_view.dart';
 import 'package:save_key/common/app_color/app_colors.dart';
 import 'package:save_key/common/app_text_style/styles.dart';
 
@@ -20,6 +21,7 @@ class DealsView extends GetView<DealsController> {
       appBar: AppBar(
         backgroundColor: AppColors.white,
         scrolledUnderElevation: 0,
+        titleSpacing: 20.w,
         toolbarHeight: 90.h,
         title: Row(
           children: [
@@ -37,7 +39,7 @@ class DealsView extends GetView<DealsController> {
             Spacer(),
             GestureDetector(
               onTap: () {
-                //Get.to(()=> NotificationsView());
+                Get.to(()=> CreateDealsView());
               },
               child: Image.asset(
                 AppImages.addCircle,
@@ -133,7 +135,7 @@ class DealsView extends GetView<DealsController> {
                                   child: Row(
                                     children: [
                                       Image.asset(
-                                        AppImages.discount,
+                                        AppImages.deals,
                                         scale: 4,
                                       ),
                                       sw5,

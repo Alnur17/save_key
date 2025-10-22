@@ -8,13 +8,13 @@ import 'package:save_key/app/modules/local_business/local_business_home/views/lo
 import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/app_text_style/styles.dart';
-import '../../../../../common/helper/category_row.dart';
 import '../../../../../common/helper/custom_profile_image.dart';
 import '../../../../../common/helper/top_deals_card.dart';
 import '../../../../../common/helper/yearly_chart.dart';
 import '../../../../../common/size_box/custom_sizebox.dart';
 import '../../../../../common/widgets/custom_textfield.dart';
 import '../../../member/savings/model/persional_stat_card.dart';
+import '../../deals/views/create_deals_view.dart';
 import '../controllers/local_business_home_controller.dart';
 
 class LocalBusinessHomeView extends GetView<LocalBusinessHomeController> {
@@ -28,7 +28,7 @@ class LocalBusinessHomeView extends GetView<LocalBusinessHomeController> {
         backgroundColor: AppColors.white,
         scrolledUnderElevation: 0,
         toolbarHeight: 150.h,
-        titleSpacing: 20,
+        titleSpacing: 20.w,
         title: Column(
           children: [
             Row(
@@ -65,7 +65,7 @@ class LocalBusinessHomeView extends GetView<LocalBusinessHomeController> {
                 Spacer(),
                 GestureDetector(
                   onTap: () {
-                    //Get.to(()=> );
+                    Get.to(()=> CreateDealsView());
                   },
                   child: Image.asset(
                     AppImages.addCircle,

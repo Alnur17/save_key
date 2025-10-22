@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:save_key/app/modules/auth/login/views/login_view.dart';
 import 'package:save_key/common/app_color/app_colors.dart';
 import 'package:save_key/common/app_text_style/styles.dart';
 
 import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/size_box/custom_sizebox.dart';
+import '../../../../../common/widgets/custom_button.dart';
 
 class RequestSubmittedView extends GetView {
   const RequestSubmittedView({super.key});
@@ -58,6 +60,14 @@ class RequestSubmittedView extends GetView {
                 'Once approved, you’ll be able to create deals, track redemptions, and access your dashboard.',
                 style: h5,
                 textAlign: TextAlign.center,
+              ),
+              sh20,
+              CustomButton(
+                text: 'Go to Login',
+                onPressed: () {
+                  Get.to(()=> LoginView());
+                },
+                gradientColors: AppColors.buttonColor,
               ),
             ],
           ),

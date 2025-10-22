@@ -154,7 +154,7 @@ class YearlyChart extends StatelessWidget {
                     barRods: [
                       BarChartRodData(
                         toY: value,
-                        color: AppColors.primaryColor ?? Colors.green,
+                        color: AppColors.greenNormal,
                         width: 14.w,
                         borderRadius: BorderRadius.circular(6).r,
                       ),

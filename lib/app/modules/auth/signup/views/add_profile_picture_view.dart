@@ -1,11 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:save_key/app/modules/auth/auth_landing/views/auth_landing_view.dart';
 import 'package:save_key/app/modules/local_business/setup_your_business/views/setup_your_business_view.dart';
-import 'package:save_key/app/modules/member/subscription_plan/views/subscription_plan_view.dart';
 import 'package:save_key/common/app_color/app_colors.dart';
 import 'package:save_key/common/app_images/app_images.dart';
 import 'package:save_key/common/app_text_style/styles.dart';
@@ -13,9 +10,12 @@ import 'package:save_key/common/size_box/custom_sizebox.dart';
 import 'package:save_key/common/widgets/custom_button.dart';
 
 import '../../../../../common/helper/custom_profile_image.dart';
+import '../../../member/subscription_plan/views/subscription_plan_view.dart';
 
 class AddProfilePictureView extends GetView {
-  const AddProfilePictureView({super.key});
+  final bool isMember;
+
+  const AddProfilePictureView({super.key, required this.isMember});
 
   @override
   Widget build(BuildContext context) {
@@ -55,8 +55,11 @@ class AddProfilePictureView extends GetView {
             CustomButton(
               text: 'Skip',
               onPressed: () {
-                //Get.to(()=> SubscriptionPlanView());
-                Get.to(()=> SetupYourBusinessView());
+                if (isMember == true) {
+                  Get.to(() => SubscriptionPlanView());
+                } else {
+                  Get.to(() => SetupYourBusinessView());
+                }
               },
               backgroundColor: AppColors.transparent,
               borderColor: AppColors.greenNormal,

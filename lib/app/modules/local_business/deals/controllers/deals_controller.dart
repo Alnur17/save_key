@@ -1,23 +1,25 @@
 import 'package:get/get.dart';
 
 class DealsController extends GetxController {
-  //TODO: Implement DealsController
+  var selectedDiscountType = ''.obs;
+  var selectedEligibility = ''.obs;
+  var selectedSchedule = ''.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void changeDiscountType(String? value) {
+    if (value != null) {
+      selectedDiscountType.value = value;
+    }
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void changeEligibility(String? value) {
+    if (value != null) {
+      selectedEligibility.value = value;
+    }
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  void changeSchedule(String? value) {
+    if (value != null) {
+      selectedSchedule.value = value;
+    }
   }
-
-  void increment() => count.value++;
 }

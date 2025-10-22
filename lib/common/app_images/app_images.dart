@@ -19,7 +19,6 @@ class AppImages {
   static const activityLog = "assets/icons/activity log.png";
   static const activityLogFilled = "assets/icons/activity log filled.png";
   static const browsePhotos = "assets/icons/browse photos.png";
-  static const gallery = "assets/icons/gallery.png";
   static const galleryFilled = "assets/icons/gallery filled.png";
   static const favoriteUnlocked = "assets/icons/favourite unlock.png";
   static const language = "assets/icons/language.png";
@@ -38,6 +37,7 @@ class AppImages {
   static const camera = "assets/icons/camera.png";
 
 
+  static const gallery = "assets/icons/gallery.png";
   static const editBusinessProfile = "assets/icons/edit business profile.png";
   static const call = "assets/icons/call.png";
   static const edit = "assets/icons/edit.png";

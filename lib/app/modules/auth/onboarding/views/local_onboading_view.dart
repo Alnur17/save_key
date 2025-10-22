@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:save_key/app/modules/auth/signup/views/local_signup_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
@@ -8,7 +9,6 @@ import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/widgets/custom_background_image.dart';
 import '../../../../../common/widgets/custom_button.dart';
 import '../../../../../common/widgets/onboarding_page.dart';
-import '../../chose_role/views/chose_role_view.dart';
 
 class LocalOnboardingView extends StatefulWidget {
   const LocalOnboardingView({super.key});
@@ -89,7 +89,7 @@ class _LocalOnboardingViewState extends State<LocalOnboardingView> {
                         curve: Curves.easeInOut,
                       );
                     } else {
-                      Get.to(() => ChoseRoleView());
+                      Get.to(() => LocalSignupView());
                     }
                   }
                 },

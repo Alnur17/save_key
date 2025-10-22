@@ -32,10 +32,11 @@ class UploadWidget extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: AppColors.grey,
-          style: BorderStyle.solid,
-        ),
+        // border: Border.all(
+        //   color: AppColors.grey,
+        //   style: BorderStyle.solid,
+        // ),
+        color: AppColors.textFieldBag
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(12),

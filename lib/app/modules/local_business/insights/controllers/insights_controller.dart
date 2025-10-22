@@ -1,23 +1,16 @@
 import 'package:get/get.dart';
 
 class InsightsController extends GetxController {
-  //TODO: Implement InsightsController
+  final RxString selectedPeriod = 'This month'.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
+  final List<double> redemptionTrend = [100, 150, 120, 250];
+  final Map<String, double> usageByTime = {
+    'Morning': 200,
+    'Afternoon': 700,
+    'Evening': 450
+  };
+  final Map<String, double> loyalty = {
+    'Repeat Customer': 70,
+    'New Customer': 30
+  };
 }
