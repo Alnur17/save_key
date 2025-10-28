@@ -92,11 +92,27 @@ class CreateDealsView extends StatelessWidget {
             ),
             sh8,
             Obx(
-              () => ReusableDropdown(
-                options: ['Percentage', 'Buy 1 Get 1 free', 'Free Item'],
-                hintText: 'Select a type',
-                selectedValue: controller.selectedDiscountType.value,
-                onChanged: (value) => controller.changeDiscountType(value),
+              () => Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ReusableDropdown(
+                    options: ['Percentage', 'Buy 1 Get 1 free', 'Free Item'],
+                    hintText: 'Select a type',
+                    selectedValue: controller.selectedDiscountType.value,
+                    onChanged: (value) => controller.changeDiscountType(value),
+                  ),
+                  if (controller.showPercentageField.value) ...[
+                    sh12,
+                    Text(
+                      'Percentage',
+                      style: h4,
+                    ),
+                    sh8,
+                    CustomTextField(
+                      hintText: 'Enter percentage',
+                    ),
+                  ],
+                ],
               ),
             ),
             sh12,
@@ -107,7 +123,12 @@ class CreateDealsView extends StatelessWidget {
             sh8,
             Obx(
               () => ReusableDropdown(
-                options: ['Once per week', 'One-Time Only', 'Unlimited'],
+                options: [
+                  'Once per month',
+                  'Once per week',
+                  'One-Time Only',
+                  'Unlimited'
+                ],
                 hintText: 'Select a type',
                 selectedValue: controller.selectedEligibility.value,
                 onChanged: (value) => controller.changeEligibility(value),
@@ -151,12 +172,12 @@ class CreateDealsView extends StatelessWidget {
       ),
       bottomSheet: Container(
         color: AppColors.white,
-        padding: const EdgeInsets.only(left: 20,right: 20, bottom: 20).r,
+        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20).r,
         child: CustomButton(
-        text: 'Upload',
-        onPressed: () {},
-        gradientColors: AppColors.buttonColor,
-            ),
+          text: 'Upload',
+          onPressed: () {},
+          gradientColors: AppColors.buttonColor,
+        ),
       ),
     );
   }
