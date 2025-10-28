@@ -14,13 +14,15 @@ class CustomBackgroundImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage(backImage!),fit: BoxFit.cover),
+    return SafeArea(
+      child: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage(backImage!),fit: BoxFit.cover),
+        ),
+        child: child,
       ),
-      child: child,
     );
   }
 }

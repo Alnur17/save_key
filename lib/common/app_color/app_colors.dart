@@ -15,7 +15,7 @@ class AppColors {
   static const authBackColor = [Color(0xffF9FAFC), Color(0xffFBF6EA)];
   static const buttonColor = [Color(0xff0BF3E7), Color(0xff1CD77A)];
   static const gradientColorBlue = [Color(0xff63B3ED), Color(0xff3182CE)];
-  static const gradientColorGrey = [Color(0xffE2E2E2), Color(0xffA0A19E)];
+  static const gradientColorGrey = [Color(0xffF3F3F5), Color(0xffF3F3F5)];
   static const gradientColorGreen = [Color(0xff99ECCC), Color(0xff54B18D)];
 
   //fixed color

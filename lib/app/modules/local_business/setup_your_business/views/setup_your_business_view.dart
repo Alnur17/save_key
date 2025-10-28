@@ -75,7 +75,7 @@ class SetupYourBusinessView extends StatelessWidget {
                         ),
                         sh8,
                         CustomTextField(
-                          hintText: 'Enter Your address',
+                          hintText: '10:00 AM',
                         ),
                       ],
                     ),

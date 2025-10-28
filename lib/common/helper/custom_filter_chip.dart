@@ -27,7 +27,13 @@ class CustomFilterChip extends StatelessWidget {
         margin: EdgeInsets.only(right: 8).r,
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6).r,
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.greenNormal : AppColors.textFieldBag,
+          gradient: LinearGradient(
+            colors: isSelected
+                ? AppColors.buttonColor
+                : AppColors.gradientColorGrey,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
           borderRadius: BorderRadius.circular(20).r,
           //border: Border.all(color: AppColors.borderColor),
         ),

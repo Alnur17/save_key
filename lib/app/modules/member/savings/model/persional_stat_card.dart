@@ -25,9 +25,10 @@ class PersonalStatCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color color = isPositive ? AppColors.greenNormal : Colors.red;
+    final Color color = isPositive ? AppColors.greenNormal : AppColors.red;
 
     return Container(
+      height: 150.h,
       padding: const EdgeInsets.all(8).r,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
@@ -35,6 +36,7 @@ class PersonalStatCard extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Title + Icon
           Row(

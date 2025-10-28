@@ -25,7 +25,7 @@ class ChoseRoleView extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
                 AppImages.logo,
@@ -48,7 +48,7 @@ class ChoseRoleView extends StatelessWidget {
                   Expanded(
                     child: RoleCard(
                       title: 'Member',
-                      subtitle: 'Select how you want to get started',
+                      //subtitle: 'Select how you want to get started',
                       imagePath: AppImages.member,
                       isSelected: controller.selectedIndex.value == 0,
                       onTap: () => controller.selectRole(0),
@@ -58,7 +58,7 @@ class ChoseRoleView extends StatelessWidget {
                   Expanded(
                     child: RoleCard(
                       title: 'Local Business',
-                      subtitle: 'Select how you want to get started',
+                      //subtitle: 'Select how you want to get started',
                       imagePath: AppImages.business,
                       isSelected: controller.selectedIndex.value == 1,
                       onTap: () => controller.selectRole(1),
