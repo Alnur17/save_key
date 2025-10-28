@@ -1,0 +1,127 @@
+class AppImages {
+  //================ Icons ==================>
+  static const logoMain = "assets/icons/main logo.png";
+  static const add = "assets/icons/add.png";
+  static const lockPro = "assets/icons/lock pro.png";
+  static const lock = "assets/icons/lock.png";
+
+
+
+  static const addCircle = "assets/icons/add circle.png";
+  static const arrowRightBig = "assets/icons/arrow right big.png";
+  static const arrowRightNormal = "assets/icons/Arrow right light.png";
+  static const arrowLeftBack = "assets/icons/ArrowLeft.png";
+  static const checkBoxBig = "assets/icons/checkbox big.png";
+  static const checkBoxCircle = "assets/icons/circle checkbox.png";
+  static const checkBoxFilled = "assets/icons/checkbox filled.png";
+  static const checkBoxFilledSquare = "assets/icons/Checbox filled squar.png";
+  static const accountInfo = "assets/icons/account info.png";
+  static const activityLog = "assets/icons/activity log.png";
+  static const activityLogFilled = "assets/icons/activity log filled.png";
+  static const browsePhotos = "assets/icons/browse photos.png";
+  static const galleryFilled = "assets/icons/gallery filled.png";
+  static const favoriteUnlocked = "assets/icons/favourite unlock.png";
+  static const language = "assets/icons/language.png";
+  static const languageTwo = "assets/icons/language 2.png";
+  static const changePassPro = "assets/icons/change password pro.png";
+  static const changePassBig = "assets/icons/change password big.png";
+  static const logoutBig = "assets/icons/log out big.png";
+  static const feedback = "assets/icons/feedback.png";
+  static const logout = "assets/icons/logout.png";
+  static const copy = "assets/icons/copy.png";
+  static const view = "assets/icons/view.png";
+  static const giftBox = "assets/icons/gift box.png";
+  static const crownCircle = "assets/icons/crown circle.png";
+  static const uploadImage = "assets/icons/upload image.png";
+  static const cameraCircle = "assets/icons/camera circle.png";
+  static const camera = "assets/icons/camera.png";
+
+
+  static const gallery = "assets/icons/gallery.png";
+  static const editBusinessProfile = "assets/icons/edit business profile.png";
+  static const call = "assets/icons/call.png";
+  static const edit = "assets/icons/edit.png";
+  static const pause = "assets/icons/pause.png";
+  static const email = "assets/icons/mail.png";
+  static const support = "assets/icons/support.png";
+  static const arrowRight = "assets/icons/arrow right.png";
+  static const editProfile = "assets/icons/edit profile.png";
+  static const checkBox = "assets/icons/checkbox.png";
+  static const eyeClose = "assets/icons/eye close.png";
+  static const eyeOpen = "assets/icons/eye.png";
+  static const scan = "assets/icons/scan.png";
+  static const insights = "assets/icons/insights.png";
+  static const deals = "assets/icons/deals.png";
+  static const home = "assets/icons/home.png";
+  static const dashboard = "assets/icons/dashboard.png";
+  static const profile = "assets/icons/account.png";
+  static const favorite = "assets/icons/bookmark.png";
+  static const favoriteFilled = "assets/icons/favorite filled.png";
+  static const back = "assets/icons/back.png";
+  static const filter = "assets/icons/filter.png";
+  static const rightChecked = "assets/icons/right checked.png";
+  static const crown = "assets/icons/crown.png";
+  static const notificationCircle = "assets/icons/notification circle.png";
+  static const search = "assets/icons/search.png";
+  static const changePass = "assets/icons/change password.png";
+  static const faq = "assets/icons/faq.png";
+  static const subscription = "assets/icons/subscription.png";
+  static const subscriptionHistory = "assets/icons/subscription history.png";
+  static const subscriptionManage = "assets/icons/manage subscription.png";
+  static const delete = "assets/icons/delete.png";
+  static const deleteCircle = "assets/icons/delete circle.png";
+  static const editCircle = "assets/icons/edit circle.png";
+  static const terms = "assets/icons/terms and conditions.png";
+  static const privacy = "assets/icons/privacy and policy.png";
+  static const notification = "assets/icons/notification.png";
+  static const notificationMute = "assets/icons/mute notification.png";
+  static const notificationUnMute = "assets/icons/unMute notification.png";
+  static const member = "assets/icons/member.png";
+  static const status = "assets/icons/status.png";
+  static const use = "assets/icons/use.png";
+  static const arrowUpDown = "assets/icons/arrow up down.png";
+  static const business = "assets/icons/business.png";
+  static const google = "assets/icons/google.png";
+  static const apple = "assets/icons/apple.png";
+  static const code = "assets/icons/code.png";
+  static const facebookSmall = "assets/icons/facebook small.png";
+  static const linkedInSmall = "assets/icons/linkedIn small.png";
+  static const savings = "assets/icons/savings.png";
+  static const save = "assets/icons/save.png";
+  static const avgSaving = "assets/icons/avg saving.png";
+  static const dealRedeem = "assets/icons/deal redeem.png";
+  static const totalSave = "assets/icons/total save.png";
+  static const totalVisit = "assets/icons/total visit.png";
+  static const calender = "assets/icons/calender.png";
+  static const clock = "assets/icons/clock.png";
+  static const details = "assets/icons/details.png";
+  static const discount = "assets/icons/discount.png";
+  static const location = "assets/icons/location.png";
+  static const website = "assets/icons/website.png";
+  static const scanner = "assets/icons/scanner.png";
+  static const scannerSmall = "assets/icons/scanner small.png";
+  static const bookmarkCircle = "assets/icons/bookmark circle.png";
+  static const bookmarkCircleFilled = "assets/icons/bookmark circle filled.png";
+
+
+  //================ Images ==================>
+
+  static const splashLogo = "assets/images/splashLogo.png";
+  static const logo = "assets/images/logo.png";
+  static const onboardingImageOne = "assets/images/onboarding 1.png";
+  static const onboardingImageTwo = "assets/images/onboarding 2.png";
+  static const onboardingImageThree = "assets/images/onboarding 3.png";
+  static const onboardingBack = "assets/images/onboarding back.png";
+  static const success = "assets/images/payment success.png";
+  static const qrcode = "assets/images/qr-code.png";
+  static const scanImage = "assets/images/scan image.png";
+  static const approveImage = "assets/images/approve image.png";
+  static const foodImage = "https://plus.unsplash.com/premium_photo-1675252369719-dd52bc69c3df?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687";
+
+
+  static const profileImage = 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+  static const profileImageTwo = 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541';
+  static const storeImageTwo = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlAHSjq7Gk3-FboSL_OMkC42bdCkxD12e4mw&s';
+  static const groupOfDogs = 'https://plus.unsplash.com/premium_photo-1668114375111-e90b5e975df6?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+  static const imageNotAvailable = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNNLEL-qmmLeFR1nxJuepFOgPYfnwHR56vcw&s';
+}
