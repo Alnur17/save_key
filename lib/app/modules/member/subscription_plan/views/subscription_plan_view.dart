@@ -58,10 +58,14 @@ class _SubscriptionPlanViewState extends State<SubscriptionPlanView> {
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 8.0),
                           decoration: BoxDecoration(
-                            color:
-                                subscriptionPlanController.isFeedSelected.value
-                                    ? AppColors.greenNormal
-                                    : AppColors.white,
+                            gradient: LinearGradient(
+                              colors: subscriptionPlanController
+                                  .isFeedSelected.value
+                                  ? AppColors.buttonColor
+                                  : AppColors.authBackColor,
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                            ),
                             borderRadius: BorderRadius.circular(25.0),
                           ),
                           child: Center(
@@ -86,10 +90,14 @@ class _SubscriptionPlanViewState extends State<SubscriptionPlanView> {
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 8.0),
                           decoration: BoxDecoration(
-                            color:
-                                subscriptionPlanController.isFeedSelected.value
-                                    ? AppColors.white
-                                    : AppColors.greenNormal,
+                            gradient: LinearGradient(
+                              colors: subscriptionPlanController
+                                      .isFeedSelected.value
+                                  ? AppColors.authBackColor
+                                  : AppColors.buttonColor,
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                            ),
                             borderRadius: BorderRadius.circular(25.0),
                           ),
                           child: Center(

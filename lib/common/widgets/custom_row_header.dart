@@ -21,9 +21,11 @@ class CustomRowHeader extends StatelessWidget {
           scale: 4,
         ),
         sw5,
-        Text(
-          title,
-          style: h5,
+        Expanded(
+          child: Text(
+            title,
+            style: h5,
+          ),
         ),
       ],
     );

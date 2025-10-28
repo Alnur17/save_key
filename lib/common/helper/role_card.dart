@@ -7,7 +7,6 @@ import '../size_box/custom_sizebox.dart';
 
 class RoleCard extends StatelessWidget {
   final String title;
-  final String subtitle;
   final String imagePath;
   final bool isSelected;
   final VoidCallback onTap;
@@ -17,7 +16,6 @@ class RoleCard extends StatelessWidget {
   const RoleCard({
     super.key,
     required this.title,
-    required this.subtitle,
     required this.imagePath,
     required this.isSelected,
     required this.onTap,
@@ -36,6 +34,7 @@ class RoleCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        height: 150.h,
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12).r,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -46,17 +45,13 @@ class RoleCard extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(imagePath, scale: 4),
             sh12,
             Text(
               title,
               style: h2,
-            ),
-            sh8,
-            Text(
-              subtitle,
-              style: h5,
             ),
           ],
         ),

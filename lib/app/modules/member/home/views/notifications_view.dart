@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:save_key/app/modules/auth/auth_landing/views/auth_landing_view.dart';
 import 'package:save_key/common/app_color/app_colors.dart';
 
 import '../../../../../common/app_images/app_images.dart';
@@ -75,13 +74,16 @@ class NotificationsView extends StatelessWidget {
                         );
                       },
                       background: Container(
-                        color: Colors.red,
                         alignment: Alignment.centerRight,
+                        decoration: BoxDecoration(
+                          color: AppColors.red,
+                          borderRadius: BorderRadius.circular(16)
+                        ),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: Icon(
                             Icons.delete,
-                            color: Colors.white,
+                            color: AppColors.white,
                           ),
                         ),
                       ),

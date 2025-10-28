@@ -69,7 +69,7 @@ class SavingsView extends GetView<SavingsController> {
                   child: PersonalStatCard(
                     title: 'Total Visit',
                     amount: '720',
-                    label: 'All Business',
+                    label: 'All \nBusiness',
                     percentage: '6%',
                     iconPath: AppImages.totalVisit,
                     isPositive: true,
