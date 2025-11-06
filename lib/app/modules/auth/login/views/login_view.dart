@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:save_key/app/modules/member/dashboard/views/dashboard_view.dart';
 import 'package:save_key/common/widgets/custom_textfield.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
@@ -42,9 +41,12 @@ class LoginView extends GetView<LoginController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               sh40,
-              Image.asset(
-                AppImages.logo,
-                scale: 4,
+              Align(
+                alignment: AlignmentGeometry.center,
+                child: Image.asset(
+                  AppImages.logoLogin,
+                  scale: 4,
+                ),
               ),
               sh40,
               Text(
@@ -168,7 +170,7 @@ class LoginView extends GetView<LoginController> {
                   ],
                 ),
               ),
-              sh20,
+              sh40,
             ],
           ),
         ),

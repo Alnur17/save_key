@@ -41,7 +41,7 @@ class ChoseRoleView extends StatelessWidget {
                 'Select how you want to get started',
                 style: h3.copyWith(color: AppColors.black100),
               ),
-              sh20,
+              sh24,
               Obx(() => Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -66,7 +66,7 @@ class ChoseRoleView extends StatelessWidget {
                   ),
                 ],
               )),
-              sh20,
+              sh30,
               CustomButton(
                 text: 'Next',
                 onPressed: (){

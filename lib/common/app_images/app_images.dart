@@ -108,6 +108,7 @@ class AppImages {
 
   static const splashLogo = "assets/images/splashLogo.png";
   static const logo = "assets/images/logo.png";
+  static const logoLogin = "assets/images/logo login.png";
   static const onboardingImageOne = "assets/images/onboarding 1.png";
   static const onboardingImageTwo = "assets/images/onboarding 2.png";
   static const onboardingImageThree = "assets/images/onboarding 3.png";

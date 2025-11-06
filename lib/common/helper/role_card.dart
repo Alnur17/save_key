@@ -34,7 +34,7 @@ class RoleCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 150.h,
+        height: 120.h,
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12).r,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -51,7 +51,7 @@ class RoleCard extends StatelessWidget {
             sh12,
             Text(
               title,
-              style: h2,
+              style: h3.copyWith(fontSize: 18),
             ),
           ],
         ),
