@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -150,14 +149,12 @@ class _HomeViewState extends State<HomeView> {
                   description:
                       'A veggie burger is a plant-based patty served in a burger bun, made from ingredients like vegetables and legumes.',
                   discount: '20%',
-                  date: '23 Sep 2025',
-                  startTime: '03:00 PM',
+                  usedTimesLeft: '23 Sep 2025',
                   dealType: 'New Deal',
-                  savedAmount: 'Saved \$20',
                   onDetailsTap: () {
                     Get.to(()=> DiscountDetailsView());
                   },
-                  onScannerTap: () {
+                  onGetDiscountTap: () {
                     Get.to(() => QrCodeView(
                       data: 'D-VG 458706',
                       label: 'D-VG 458706',

@@ -56,6 +56,7 @@ class AppImages {
   static const dashboard = "assets/icons/dashboard.png";
   static const profile = "assets/icons/account.png";
   static const favorite = "assets/icons/bookmark.png";
+  static const favoriteOutline = "assets/icons/favorite outline.png";
   static const favoriteFilled = "assets/icons/favorite filled.png";
   static const back = "assets/icons/back.png";
   static const filter = "assets/icons/filter.png";

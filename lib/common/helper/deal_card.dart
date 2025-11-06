@@ -7,7 +7,7 @@ import '../app_images/app_images.dart';
 import '../app_text_style/styles.dart';
 import '../size_box/custom_sizebox.dart';
 import '../widgets/custom_button.dart';
-import 'custom_profile_image.dart'; // for sh20, sw8, etc.
+import 'custom_profile_image.dart';
 
 class DealCard extends StatelessWidget {
   final String mainImage;
@@ -16,12 +16,10 @@ class DealCard extends StatelessWidget {
   final String foodName;
   final String description;
   final String discount;
-  final String date;
-  final String startTime;
-  final String dealType; // e.g. 'New Deal'
-  final String savedAmount; // e.g. 'Saved $20'
+  final String usedTimesLeft;
+  final String dealType;
   final VoidCallback onDetailsTap;
-  final VoidCallback onScannerTap;
+  final VoidCallback onGetDiscountTap;
   final VoidCallback onBookmarkTap;
   final VoidCallback? onViewTap;
 
@@ -33,12 +31,10 @@ class DealCard extends StatelessWidget {
     required this.foodName,
     required this.description,
     required this.discount,
-    required this.date,
-    required this.startTime,
+    required this.usedTimesLeft,
     required this.dealType,
-    required this.savedAmount,
     required this.onDetailsTap,
-    required this.onScannerTap,
+    required this.onGetDiscountTap,
     required this.onBookmarkTap,
     this.onViewTap,
   });
@@ -77,24 +73,20 @@ class DealCard extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 0,
-                right: 0,
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16).r,
-                  alignment: Alignment.center,
-                  height: 35.h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
+                top: 12,
+                right: 12,
+                child: GestureDetector(
+                  onTap: onBookmarkTap,
+                  child: Container(
+                    height: 35.h,
+                    width: 35.w,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      color: AppColors.black100,
                     ),
-                    color: AppColors.greenLight,
-                  ),
-                  child: Text(
-                    savedAmount,
-                    style: h5.copyWith(
-                      color: AppColors.greenNormal,
-                      fontWeight: FontWeight.bold,
+                    child: Image.asset(
+                      AppImages.favoriteOutline,
+                      scale: 4,
                     ),
                   ),
                 ),
@@ -107,7 +99,10 @@ class DealCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    CustomProfileImage(imageUrl: profileImage,size: 40,),
+                    CustomProfileImage(
+                      imageUrl: profileImage,
+                      size: 40,
+                    ),
                     sw8,
                     Expanded(
                       child: Text(
@@ -168,28 +163,24 @@ class DealCard extends StatelessWidget {
                 ),
                 sh16,
                 _buildListTile(AppImages.discount, 'Discount', discount),
-                _buildListTile(AppImages.calender, 'Date', date),
-                _buildListTile(AppImages.clock, 'Start time', startTime),
+                _buildListTile(AppImages.use, 'Used Times', usedTimesLeft),
                 Row(
                   children: [
                     Expanded(
                       child: CustomButton(
                         text: 'Details',
                         onPressed: onDetailsTap,
-                        imageAssetPath: AppImages.details,
-                        centerImageWithText: true,
-                        gradientColors: AppColors.buttonColor,
+                        backgroundColor: AppColors.greenLight,
+                        textColor: AppColors.greenNormal,
                       ),
                     ),
                     sw8,
-                    GestureDetector(
-                      onTap: onScannerTap,
-                      child: Image.asset(AppImages.scanner, scale: 4),
-                    ),
-                    sw8,
-                    GestureDetector(
-                      onTap: onBookmarkTap,
-                      child: Image.asset(AppImages.bookmarkCircle, scale: 4),
+                    Expanded(
+                      child: CustomButton(
+                        text: 'Get Discount',
+                        onPressed: onGetDiscountTap,
+                        gradientColors: AppColors.buttonColor,
+                      ),
                     ),
                   ],
                 ),
