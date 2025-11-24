@@ -33,7 +33,18 @@ class _SubscriptionPlanViewState extends State<SubscriptionPlanView> {
         backgroundColor: AppColors.white,
         scrolledUnderElevation: 0,
         title: Text('Choose your plan', style: appBarStyle),
-        automaticallyImplyLeading: false,
+        leading: Padding(
+          padding: EdgeInsets.only(left: 12).r,
+          child: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Image.asset(
+              AppImages.back,
+              scale: 4,
+            ),
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20).r,

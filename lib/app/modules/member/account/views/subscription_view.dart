@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:save_key/app/modules/member/subscription_plan/views/subscription_plan_view.dart';
 import 'package:save_key/common/app_text_style/styles.dart';
 import 'package:save_key/common/size_box/custom_sizebox.dart';
 import 'package:save_key/common/widgets/custom_button.dart';
@@ -80,7 +81,9 @@ class SubscriptionView extends GetView {
             sh20,
             CustomButton(
               text: 'Update Plan',
-              onPressed: () {},
+              onPressed: () {
+                Get.to(()=> SubscriptionPlanView());
+              },
               gradientColors: AppColors.buttonColor,
             ),
             sh20,

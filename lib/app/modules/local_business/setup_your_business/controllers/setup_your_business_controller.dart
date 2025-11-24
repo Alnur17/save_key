@@ -16,4 +16,16 @@ class SetupYourBusinessController extends GetxController {
   void selectCategory(String category) {
     selectedCategory.value = category;
   }
+
+  final businessType = [
+    'In-Person Discounts',
+    'Online Discounts',
+  ];
+
+  // default selected
+  var selectedBusinessType = 'In-Person Discounts'.obs;
+
+  void selectBusinessType(String type) {
+    selectedBusinessType.value = type;
+  }
 }

@@ -106,7 +106,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SAVINGS,
-      page: () => const SavingsView(),
+      page: () => const AnalyticsView(),
       binding: SavingsBinding(),
     ),
     GetPage(

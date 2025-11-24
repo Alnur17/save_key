@@ -40,9 +40,11 @@ class AppImages {
   static const gallery = "assets/icons/gallery.png";
   static const editBusinessProfile = "assets/icons/edit business profile.png";
   static const call = "assets/icons/call.png";
+  static const callCircle = "assets/icons/call circle.png";
   static const edit = "assets/icons/edit.png";
   static const pause = "assets/icons/pause.png";
   static const email = "assets/icons/mail.png";
+  static const mailCircle = "assets/icons/mail circle.png";
   static const support = "assets/icons/support.png";
   static const arrowRight = "assets/icons/arrow right.png";
   static const editProfile = "assets/icons/edit profile.png";
@@ -63,7 +65,10 @@ class AppImages {
   static const rightChecked = "assets/icons/right checked.png";
   static const crown = "assets/icons/crown.png";
   static const notificationCircle = "assets/icons/notification circle.png";
+  static const checkMark = "assets/icons/check mark.png";
+  static const checkMarkBig = "assets/icons/check mark big.png";
   static const search = "assets/icons/search.png";
+  static const searchCircle = "assets/icons/search circle.png";
   static const changePass = "assets/icons/change password.png";
   static const faq = "assets/icons/faq.png";
   static const subscription = "assets/icons/subscription.png";
@@ -85,12 +90,14 @@ class AppImages {
   static const google = "assets/icons/google.png";
   static const apple = "assets/icons/apple.png";
   static const code = "assets/icons/code.png";
+  static const instagram = "assets/icons/instagram.png";
   static const facebookSmall = "assets/icons/facebook small.png";
   static const linkedInSmall = "assets/icons/linkedIn small.png";
   static const savings = "assets/icons/savings.png";
   static const save = "assets/icons/save.png";
   static const avgSaving = "assets/icons/avg saving.png";
   static const dealRedeem = "assets/icons/deal redeem.png";
+  static const topBusiness = "assets/icons/top business.png";
   static const totalSave = "assets/icons/total save.png";
   static const totalVisit = "assets/icons/total visit.png";
   static const calender = "assets/icons/calender.png";

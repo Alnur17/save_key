@@ -44,6 +44,36 @@ class SetupYourBusinessView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               sh16,
+              Text('Choose Business Type', style: h3),
+              sh8,
+              Obx(
+                    () => Wrap(
+                  spacing: 10,
+                  runSpacing: 8,
+                  children: controller.businessType.map((types) {
+                    final isSelected =
+                        controller.selectedBusinessType.value == types;
+                    return ChoiceChip(
+                      label: Text(
+                        types,
+                        style: h5.copyWith(
+                          color: isSelected ? Colors.white : Colors.black87,
+                        ),
+                      ),
+                      showCheckmark: false,
+                      selected: isSelected,
+                      onSelected: (_) => controller.selectBusinessType(types),
+                      selectedColor: AppColors.greenNormal,
+                      backgroundColor: AppColors.textFieldBag,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        side: BorderSide.none,
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
+              sh20,
               Text(
                 'Business Address',
                 style: h3,
@@ -61,42 +91,6 @@ class SetupYourBusinessView extends StatelessWidget {
               CustomTextField(
                 height: 100,
                 hintText: 'Write here...',
-              ),
-              sh20,
-              Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Open time',
-                          style: h3,
-                        ),
-                        sh8,
-                        CustomTextField(
-                          hintText: '10:00 AM',
-                        ),
-                      ],
-                    ),
-                  ),
-                  sw8,
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Close time',
-                          style: h3,
-                        ),
-                        sh8,
-                        CustomTextField(
-                          hintText: '09:00 PM',
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
               ),
               sh20,
               Text('Category', style: h3),
@@ -139,21 +133,12 @@ class SetupYourBusinessView extends StatelessWidget {
               ),
               sh20,
               Text(
-                'Linkedin',
+                'Instagram',
                 style: h3,
               ),
               sh8,
               CustomTextField(
-                hintText: 'www.linkedin.com/username',
-              ),
-              sh20,
-              Text(
-                'Facebook',
-                style: h3,
-              ),
-              sh8,
-              CustomTextField(
-                hintText: 'www.facebook.com/username',
+                hintText: 'www.instagram.com/username',
               ),
               sh20,
               CustomButton(

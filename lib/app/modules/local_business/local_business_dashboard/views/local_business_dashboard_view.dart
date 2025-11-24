@@ -29,7 +29,7 @@ class _LocalBusinessDashboardViewState extends State<LocalBusinessDashboardView>
     return [
       LocalBusinessHomeView(),
       DealsView(),
-      ScanView(),
+      //ScanView(),
       InsightsView(),
       LocalBusinessAccountView(),
     ];
@@ -73,24 +73,24 @@ class _LocalBusinessDashboardViewState extends State<LocalBusinessDashboardView>
         activeColorPrimary: AppColors.greenNormal,
         inactiveColorPrimary: AppColors.grey,
       ),
-      PersistentBottomNavBarItem(
-        icon: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              AppImages.scan,
-              scale: 4,
-            ),
-            sh5,
-            Text(
-              "Scan",
-              style: h6,
-            ),
-          ],
-        ),
-        activeColorPrimary: AppColors.greenNormal,
-        inactiveColorPrimary: AppColors.grey,
-      ),
+      // PersistentBottomNavBarItem(
+      //   icon: Column(
+      //     mainAxisSize: MainAxisSize.min,
+      //     children: [
+      //       Image.asset(
+      //         AppImages.scan,
+      //         scale: 4,
+      //       ),
+      //       sh5,
+      //       Text(
+      //         "Scan",
+      //         style: h6,
+      //       ),
+      //     ],
+      //   ),
+      //   activeColorPrimary: AppColors.greenNormal,
+      //   inactiveColorPrimary: AppColors.grey,
+      // ),
       PersistentBottomNavBarItem(
         icon: Column(
           mainAxisSize: MainAxisSize.min,

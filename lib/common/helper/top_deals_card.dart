@@ -6,18 +6,18 @@ import '../../../../../common/app_text_style/styles.dart';
 
 class TopDealsCard extends StatelessWidget {
   final String title;
-  final String category;
+//  final String category;
   final String redemptions;
-  final String sales;
+  //final String sales;
   final String status;
   final bool isActive;
 
   const TopDealsCard({
     super.key,
     required this.title,
-    required this.category,
+    //required this.category,
     required this.redemptions,
-    required this.sales,
+    //required this.sales,
     required this.status,
     this.isActive = true,
   });
@@ -58,16 +58,17 @@ class TopDealsCard extends StatelessWidget {
               ),
             ],
           ),
-          sh5,
-          Text(category, style: h6),
+          // sh5,
+          // Text(category, style: h6),
           sh8,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(redemptions, style: h6),
-              Text(sales, style: h6),
-            ],
-          ),
+          Text(redemptions, style: h6),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   children: [
+          //     Text(redemptions, style: h6),
+          //     Text(sales, style: h6),
+          //   ],
+          // ),
         ],
       ),
     );

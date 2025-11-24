@@ -98,45 +98,19 @@ class LocalBusinessHomeView extends GetView<LocalBusinessHomeController> {
               children: [
                 Expanded(
                   child: PersonalStatCard(
-                    title: 'Today\'s',
-                    amount: '12',
-                    label: 'Redemptions',
-                    iconPath: AppImages.dealRedeem,
-                    isPositive: true,
-                  ),
-                ),
-                sw12,
-                Expanded(
-                  child: PersonalStatCard(
                     title: 'This Month',
                     amount: '248',
                     label: 'Redemptions',
                     iconPath: AppImages.dealRedeem,
-                    isPositive: true,
                   ),
                 ),
-              ],
-            ),
-            sh16,
-            Row(
-              children: [
+                sw12,
                 Expanded(
                   child: PersonalStatCard(
                     title: 'Active Deals',
                     amount: '720',
                     label: 'Live Offer',
                     iconPath: AppImages.totalVisit,
-                    isPositive: true,
-                  ),
-                ),
-                sw12,
-                Expanded(
-                  child: PersonalStatCard(
-                    title: 'Total Sales',
-                    amount: '\$1,930',
-                    label: 'From all deals',
-                    iconPath: AppImages.avgSaving,
-                    isPositive: true,
                   ),
                 ),
               ],
@@ -172,9 +146,9 @@ class LocalBusinessHomeView extends GetView<LocalBusinessHomeController> {
                         padding: EdgeInsets.only(bottom: index == DummyData.offers.length - 1 ? 0 : 8),
                         child: TopDealsCard(
                           title: offer['title'] as String,
-                          category: offer['category'] as String,
+                         // category: offer['category'] as String,
                           redemptions: offer['redemptions'] as String,
-                          sales: offer['sales'] as String,
+                          //sales: offer['sales'] as String,
                           status: offer['status'] as String,
                           isActive: offer['isActive'] as bool,
                         ),

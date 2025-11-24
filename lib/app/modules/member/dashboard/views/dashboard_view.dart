@@ -27,7 +27,7 @@ class _DashboardViewState extends State<DashboardView> {
     return [
       HomeView(),
       FavoriteView(),
-      SavingsView(),
+      AnalyticsView(),
       AccountView(),
     ];
   }
@@ -75,12 +75,12 @@ class _DashboardViewState extends State<DashboardView> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              AppImages.savings,
+              AppImages.insights,
               scale: 4,
             ),
             sh5,
             Text(
-              "Savings",
+              "Analytics",
               style: h5,
             ),
           ],
