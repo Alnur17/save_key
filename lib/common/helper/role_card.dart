@@ -28,7 +28,7 @@ class RoleCard extends StatelessWidget {
     final effectiveBorderColor =
         isSelected ? AppColors.greenNormal : (borderColor ?? AppColors.silver);
     final effectiveBackgroundColor = isSelected
-        ? AppColors.greenLight
+        ? AppColors.splashBackground
         : (backgroundColor ?? AppColors.bottomNavbar);
 
     return GestureDetector(

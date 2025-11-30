@@ -3,19 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:save_key/app/modules/auth/login/views/login_view.dart';
-import 'package:save_key/app/modules/auth/signup/views/signup_view.dart';
+import 'package:save_key/app/modules/auth/chose_role/controllers/chose_role_controller.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/app_text_style/styles.dart';
 import '../../../../../common/size_box/custom_sizebox.dart';
 import '../../../../../common/widgets/custom_button.dart';
+import '../../login/views/login_view.dart';
 import '../../signup/views/local_signup_view.dart';
-import '../controllers/auth_landing_controller.dart';
+import '../../signup/views/signup_view.dart';
 
-class AuthLandingView extends GetView<AuthLandingController> {
-  const AuthLandingView({super.key});
+class AuthLandingView extends GetView {
+
+  AuthLandingView({super.key,});
+
+  final ChoseRoleController choseRoleController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +31,10 @@ class AuthLandingView extends GetView<AuthLandingController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              AppImages.logo,
+              AppImages.splashLogo,
               scale: 4,
+              height: 110,
+              width: 110,
             ),
             sh12,
             Text(
@@ -51,8 +56,11 @@ class AuthLandingView extends GetView<AuthLandingController> {
             CustomButton(
               text: 'Sign Up',
               onPressed: () {
-                //et.to(() => SignupView());
-                Get.to(() => LocalSignupView());
+                if(choseRoleController.selectedIndex.value == 0){
+                  Get.to(() => SignupView());
+                }else{
+                  Get.to(() => LocalSignupView());
+                }
               },
               backgroundColor: AppColors.white,
               borderColor: AppColors.greenNormal,
@@ -66,7 +74,7 @@ class AuthLandingView extends GetView<AuthLandingController> {
                 children: [
                   TextSpan(
                     text:
-                        'By signing up you confirm that you have read & agree to our ',
+                    'By signing up you confirm that you have read & agree to our ',
                     style: h5,
                   ),
                   TextSpan(

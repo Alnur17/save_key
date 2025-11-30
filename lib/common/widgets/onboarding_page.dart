@@ -19,39 +19,30 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Stack(
-        children: [
-          Positioned.fill(
-            child: Image.asset(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20).r,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            sh87,
+            Image.asset(
               image,
               scale: 4,
-              fit: BoxFit.cover,
             ),
-          ),
-          Positioned(
-            bottom: 115.h,
-            left: 0.w,
-            right: 0.w,
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20).r,
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    title,
-                    style: h2,
-                  ),
-                  sh8,
-                  Text(
-                    description,
-                    textAlign: TextAlign.center,
-                    style: h5,
-                  ),
-                ],
-              ),
+            sh20,
+            Text(
+              title,
+              style: h2,
+              textAlign: TextAlign.center,
             ),
-          ),
-        ],
+            sh8,
+            Text(
+              description,
+              textAlign: TextAlign.center,
+              style: h5,
+            ),
+          ],
+        ),
       ),
     );
   }

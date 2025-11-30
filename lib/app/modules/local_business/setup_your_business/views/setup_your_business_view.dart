@@ -148,7 +148,7 @@ class SetupYourBusinessView extends StatelessWidget {
                 },
                 gradientColors: AppColors.buttonColor,
               ),
-              sh20,
+              sh60,
             ],
           ),
         ),

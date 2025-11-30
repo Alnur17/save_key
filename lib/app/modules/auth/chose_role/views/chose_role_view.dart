@@ -28,10 +28,12 @@ class ChoseRoleView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                AppImages.logo,
+                AppImages.splashLogo,
                 scale: 4,
+                height: 110,
+                width: 110,
               ),
-              sh40,
+              sh30,
               Text(
                 'Choose your role',
                 style: h1,

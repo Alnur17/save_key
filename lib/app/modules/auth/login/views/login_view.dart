@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:save_key/app/modules/auth/chose_role/controllers/chose_role_controller.dart';
 import 'package:save_key/common/widgets/custom_textfield.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
@@ -12,11 +13,14 @@ import '../../../../../common/widgets/custom_button.dart';
 import '../../../../../common/widgets/google_button.dart';
 import '../../../local_business/local_business_dashboard/views/local_business_dashboard_view.dart';
 import '../../forgot_password/views/forgot_password_view.dart';
+import '../../signup/views/local_signup_view.dart';
 import '../../signup/views/signup_view.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  const LoginView({super.key});
+  LoginView({super.key});
+
+   final ChoseRoleController choseRoleController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -154,7 +158,11 @@ class LoginView extends GetView<LoginController> {
               sh20,
               GestureDetector(
                 onTap: () {
-                  Get.to(() => SignupView());
+                  if(choseRoleController.selectedIndex.value == 0){
+                    Get.to(() => SignupView());
+                  }else{
+                    Get.to(() => LocalSignupView());
+                  }
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

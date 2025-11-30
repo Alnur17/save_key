@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:save_key/app/modules/auth/signup/views/signup_view.dart';
+import 'package:save_key/app/modules/auth/chose_role/controllers/chose_role_controller.dart';
+import 'package:save_key/app/modules/auth/chose_role/views/auth_landing_view.dart';
 import 'package:save_key/common/app_images/app_images.dart';
-import 'package:save_key/common/widgets/custom_background_image.dart';
+import 'package:save_key/common/app_text_style/styles.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
@@ -19,6 +21,8 @@ class OnboardingView extends StatefulWidget {
 class _OnboardingViewState extends State<OnboardingView> {
   final PageController _pageController = PageController();
 
+  final ChoseRoleController choseRoleController = Get.find();
+
   @override
   void dispose() {
     _pageController.dispose();
@@ -28,75 +32,83 @@ class _OnboardingViewState extends State<OnboardingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomBackgroundImage(
-        child: Stack(
-          children: [
-            PageView(
-              controller: _pageController,
-              children: [
-                OnboardingPage(
-                  image: AppImages.onboardingImageOne,
-                  title: 'Discover local savings',
-                  description:
-                      'Unlock exclusive discounts and perks at your favorite local businesses. Save more while supporting your community—all in one app.',
-                ),
-                OnboardingPage(
-                  image: AppImages.onboardingImageTwo,
-                  title: 'Easy Membership Access',
-                  description:
-                      'Choose a plan that fits you best. Get your digital membership with a unique QR code for instant discount validation.',
-                ),
-                OnboardingPage(
-                  image: AppImages.onboardingImageThree,
-                  title: 'Manage & Stay Updated',
-                  description:
-                      'Track your perks, receive real-time updates, and enjoy a smooth, secure shopping experience every time you use the app.',
-                ),
-              ],
-            ),
-            Positioned(
-              bottom: 80,
-              left: 0,
-              right: 0,
-              child: Center(
-                child: SmoothPageIndicator(
-                  controller: _pageController,
-                  count: 3,
-                  effect: WormEffect(
-                    dotColor: AppColors.greenLight,
-                    activeDotColor: AppColors.greenNormal,
-                    dotHeight: 8,
-                    dotWidth: 12,
-                    spacing: 8,
-                  ),
-                ),
+      backgroundColor: AppColors.white,
+      body: Stack(
+        children: [
+          PageView(
+            controller: _pageController,
+            children: [
+              OnboardingPage(
+                image: AppImages.onboardingImageOne,
+                title: 'Discover Discounts Nearby',
+                description: 'Find the best discounts from shops around you.',
               ),
-            ),
-            Positioned(
-              left: 20,
-              right: 20,
-              bottom: 20,
-              child: CustomButton(
-                onPressed: () {
-                  if (_pageController.page != null) {
-                    final nextPage = (_pageController.page! + 1).toInt();
-                    if (nextPage < 3) {
-                      _pageController.animateToPage(
-                        nextPage,
-                        duration: Duration(milliseconds: 500),
-                        curve: Curves.easeInOut,
-                      );
-                    } else {
-                      Get.to(() => SignupView());
-                    }
-                  }
+              OnboardingPage(
+                image: AppImages.onboardingImageTwo,
+                title: 'Get Exclusive Membership Benefits',
+                description: 'Unlock premium deals with membership.',
+              ),
+              OnboardingPage(
+                image: AppImages.onboardingImageThree,
+                title: 'Redeem Discounts Instantly',
+                description: 'Show the discount screen at the shop & redeem in one tap.',
+              ),
+            ],
+          ),
+          Positioned(
+            top: 60.h,
+            right: 20.w,
+            child: GestureDetector(
+                onTap: () {
+                  Get.to(() => AuthLandingView());
                 },
-                text: 'Next',
-                gradientColors: AppColors.buttonColor,
+                child: Text(
+                  'Skip',
+                  style: h3.copyWith(color: AppColors.greenNormal),
+                )),
+          ),
+          Positioned(
+            bottom: 140,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: SmoothPageIndicator(
+                controller: _pageController,
+                count: 3,
+                effect: WormEffect(
+                  dotColor: AppColors.greenLight,
+                  activeDotColor: AppColors.greenNormal,
+                  dotHeight: 8,
+                  dotWidth: 12,
+                  spacing: 8,
+                ),
               ),
             ),
-          ],
-        ),
+          ),
+          Positioned(
+            left: 20,
+            right: 20,
+            bottom: 60,
+            child: CustomButton(
+              onPressed: () {
+                if (_pageController.page != null) {
+                  final nextPage = (_pageController.page! + 1).toInt();
+                  if (nextPage < 3) {
+                    _pageController.animateToPage(
+                      nextPage,
+                      duration: Duration(milliseconds: 500),
+                      curve: Curves.easeInOut,
+                    );
+                  } else {
+                    Get.to(() => AuthLandingView());
+                  }
+                }
+              },
+              text: 'Next',
+              gradientColors: AppColors.buttonColor,
+            ),
+          ),
+        ],
       ),
     );
   }

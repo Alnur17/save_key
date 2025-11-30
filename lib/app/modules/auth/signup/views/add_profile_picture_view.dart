@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:save_key/app/modules/auth/chose_role/controllers/chose_role_controller.dart';
 import 'package:save_key/app/modules/local_business/setup_your_business/views/setup_your_business_view.dart';
 import 'package:save_key/app/modules/member/dashboard/views/dashboard_view.dart';
 import 'package:save_key/common/app_color/app_colors.dart';
@@ -12,9 +13,8 @@ import '../../../../../common/helper/custom_profile_image.dart';
 import '../controllers/signup_controller.dart';
 
 class AddProfilePictureView extends StatefulWidget {
-  final bool isMember;
 
-  const AddProfilePictureView({super.key, required this.isMember});
+  const AddProfilePictureView({super.key});
 
   @override
   State<AddProfilePictureView> createState() => _AddProfilePictureViewState();
@@ -22,6 +22,7 @@ class AddProfilePictureView extends StatefulWidget {
 
 class _AddProfilePictureViewState extends State<AddProfilePictureView> {
   final SignupController signupController = Get.put(SignupController());
+  final ChoseRoleController choseRoleController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -66,13 +67,12 @@ class _AddProfilePictureViewState extends State<AddProfilePictureView> {
               final hasSelectedImage = signupController.selectedImage.value != null;
 
               if (hasSelectedImage) {
-                // ✅ Show "Done" and "Change Picture"
                 return Column(
                   children: [
                     CustomButton(
                       text: 'Done',
                       onPressed: () {
-                        if (widget.isMember) {
+                        if (choseRoleController.selectedIndex.value == 0) {
                           Get.to(() => DashboardView());
                         } else {
                           Get.to(() => SetupYourBusinessView());
@@ -91,7 +91,6 @@ class _AddProfilePictureViewState extends State<AddProfilePictureView> {
                   ],
                 );
               } else {
-                // 🚀 Default state: Show "Add Picture" and "Skip"
                 return Column(
                   children: [
                     CustomButton(
@@ -103,7 +102,7 @@ class _AddProfilePictureViewState extends State<AddProfilePictureView> {
                     CustomButton(
                       text: 'Skip',
                       onPressed: () {
-                        if (widget.isMember) {
+                        if (choseRoleController.selectedIndex.value == 0) {
                           Get.to(() => DashboardView());
                         } else {
                           Get.to(() => SetupYourBusinessView());
@@ -117,7 +116,7 @@ class _AddProfilePictureViewState extends State<AddProfilePictureView> {
                 );
               }
             }),
-            sh40,
+            sh60,
           ],
         ),
       ),

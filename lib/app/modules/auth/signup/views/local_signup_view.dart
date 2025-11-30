@@ -23,6 +23,10 @@ class LocalSignupView extends GetView {
       appBar: AppBar(
         backgroundColor: AppColors.white,
         scrolledUnderElevation: 0,
+        title: Text(
+          'Create account',
+          style: appBarStyle,
+        ),
         leading: GestureDetector(
             onTap: () {
               Get.back();
@@ -38,20 +42,10 @@ class LocalSignupView extends GetView {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              sh20,
-              Image.asset(
-                AppImages.logo,
-                scale: 4,
-              ),
-              sh40,
-              Text(
-                'Create account',
-                style: h1,
-              ),
               sh5,
               Text(
                 'Fill your information below or register with your account.',
-                style: h3.copyWith(color: AppColors.black100),
+                style: h3.copyWith(color: AppColors.black100,fontWeight: FontWeight.w400),
               ),
               sh20,
               Text(
@@ -88,6 +82,7 @@ class LocalSignupView extends GetView {
               sh8,
               CustomTextField(
                 hintText: '***********',
+                sufIcon: Image.asset(AppImages.eyeClose,scale: 4),
               ),
               sh12,
               Text(
@@ -97,6 +92,7 @@ class LocalSignupView extends GetView {
               sh8,
               CustomTextField(
                 hintText: '***********',
+                sufIcon: Image.asset(AppImages.eyeClose,scale: 4),
               ),
               sh20,
               Row(
@@ -117,7 +113,7 @@ class LocalSignupView extends GetView {
                         const TextSpan(text: 'By agreeing to the '),
                         TextSpan(
                           text: 'Terms & Condition',
-                          style: h4.copyWith(color: AppColors.primaryColor),
+                          style: h4.copyWith(color: AppColors.greenNormal),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
                               // navigate to terms view
@@ -133,7 +129,7 @@ class LocalSignupView extends GetView {
               CustomButton(
                 text: 'Sign Up',
                 onPressed: () {
-                  Get.to(()=> AddProfilePictureView(isMember: false,));
+                  Get.to(()=> AddProfilePictureView());
                 },
                 gradientColors: AppColors.buttonColor,
               ),
@@ -186,12 +182,12 @@ class LocalSignupView extends GetView {
                     ),
                     Text(
                       'Sign In',
-                      style: h3.copyWith(color: AppColors.textColor),
+                      style: h3.copyWith(color: AppColors.greenNormal),
                     ),
                   ],
                 ),
               ),
-              sh20,
+              sh60,
             ],
           ),
         ),

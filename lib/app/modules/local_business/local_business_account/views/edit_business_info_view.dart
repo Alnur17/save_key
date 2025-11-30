@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:save_key/app/modules/auth/auth_landing/views/auth_landing_view.dart';
 import 'package:save_key/app/modules/member/account/controllers/account_controller.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
