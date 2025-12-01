@@ -15,7 +15,10 @@ import '../controllers/chose_role_controller.dart';
 class ChoseRoleView extends StatelessWidget {
   ChoseRoleView({super.key});
 
-  final ChoseRoleController controller = Get.put(ChoseRoleController());
+  final ChoseRoleController choseRoleController = Get.put(
+    ChoseRoleController(),
+    permanent: true,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -45,41 +48,41 @@ class ChoseRoleView extends StatelessWidget {
               ),
               sh24,
               Obx(() => Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: RoleCard(
-                      title: 'Member',
-                      //subtitle: 'Select how you want to get started',
-                      imagePath: AppImages.member,
-                      isSelected: controller.selectedIndex.value == 0,
-                      onTap: () => controller.selectRole(0),
-                    ),
-                  ),
-                  sw12,
-                  Expanded(
-                    child: RoleCard(
-                      title: 'Local Business',
-                      //subtitle: 'Select how you want to get started',
-                      imagePath: AppImages.business,
-                      isSelected: controller.selectedIndex.value == 1,
-                      onTap: () => controller.selectRole(1),
-                    ),
-                  ),
-                ],
-              )),
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: RoleCard(
+                          title: 'Member',
+                          imagePath: AppImages.member,
+                          isSelected:
+                              choseRoleController.selectedIndex.value == 0,
+                          onTap: () => choseRoleController.selectRole(0),
+                        ),
+                      ),
+                      sw12,
+                      Expanded(
+                        child: RoleCard(
+                          title: 'Local Business',
+                          imagePath: AppImages.business,
+                          isSelected:
+                              choseRoleController.selectedIndex.value == 1,
+                          onTap: () => choseRoleController.selectRole(1),
+                        ),
+                      ),
+                    ],
+                  )),
               sh30,
               CustomButton(
                 text: 'Next',
-                onPressed: (){
-                  if (controller.selectedIndex.value == 0) {
+                onPressed: () {
+                  if (choseRoleController.selectedIndex.value == 0) {
                     Get.to(() => OnboardingView());
-                  } else if (controller.selectedIndex.value == 1) {
+                  } else if (choseRoleController.selectedIndex.value == 1) {
                     Get.to(() => LocalOnboardingView());
                   }
                 },
                 gradientColors: AppColors.buttonColor,
-              )
+              ),
             ],
           ),
         ),

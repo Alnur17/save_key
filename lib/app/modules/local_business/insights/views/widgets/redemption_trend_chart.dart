@@ -95,11 +95,11 @@ class RedemptionTrendChart extends StatelessWidget {
                     .map((e) => FlSpot(e.key.toDouble(), e.value))
                     .toList(),
                 isCurved: true,
-                color: AppColors.primaryColor,
+                color: AppColors.greenNormal,
                 barWidth: 3,
                 belowBarData: BarAreaData(
                   show: true,
-                  color: AppColors.primaryColor.withOpacity(0.2),
+                  color: AppColors.greenNormal.withOpacity(0.2),
                 ),
                 dotData: FlDotData(show: true),
               ),

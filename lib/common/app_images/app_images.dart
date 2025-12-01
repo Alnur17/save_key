@@ -107,6 +107,7 @@ class AppImages {
   static const location = "assets/icons/location.png";
   static const website = "assets/icons/website.png";
   static const scanner = "assets/icons/scanner.png";
+  static const download = "assets/icons/download.png";
   static const scannerSmall = "assets/icons/scanner small.png";
   static const bookmarkCircle = "assets/icons/bookmark circle.png";
   static const bookmarkCircleFilled = "assets/icons/bookmark circle filled.png";

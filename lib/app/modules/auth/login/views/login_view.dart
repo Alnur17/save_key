@@ -12,6 +12,7 @@ import '../../../../../common/size_box/custom_sizebox.dart';
 import '../../../../../common/widgets/custom_button.dart';
 import '../../../../../common/widgets/google_button.dart';
 import '../../../local_business/local_business_dashboard/views/local_business_dashboard_view.dart';
+import '../../../member/dashboard/views/dashboard_view.dart';
 import '../../forgot_password/views/forgot_password_view.dart';
 import '../../signup/views/local_signup_view.dart';
 import '../../signup/views/signup_view.dart';
@@ -29,6 +30,10 @@ class LoginView extends GetView<LoginController> {
       appBar: AppBar(
         backgroundColor: AppColors.white,
         scrolledUnderElevation: 0,
+        title: Text(
+          'Login',
+          style: appBarStyle,
+        ),
         leading: GestureDetector(
             onTap: () {
               Get.back();
@@ -44,23 +49,10 @@ class LoginView extends GetView<LoginController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              sh40,
-              Align(
-                alignment: AlignmentGeometry.center,
-                child: Image.asset(
-                  AppImages.logoLogin,
-                  scale: 4,
-                ),
-              ),
-              sh40,
-              Text(
-                'Login',
-                style: h1,
-              ),
               sh5,
               Text(
                 'Hi Welcome back..! Please enter your correct Information And continue',
-                style: h3.copyWith(color: AppColors.black100),
+                style: h3.copyWith(color: AppColors.black100,fontWeight: FontWeight.w400),
               ),
               sh20,
               Text(
@@ -79,6 +71,7 @@ class LoginView extends GetView<LoginController> {
               sh8,
               CustomTextField(
                 hintText: '***********',
+                sufIcon: Image.asset(AppImages.eyeClose,scale: 4),
               ),
               sh20,
               Row(
@@ -115,8 +108,11 @@ class LoginView extends GetView<LoginController> {
               CustomButton(
                 text: 'Sign In',
                 onPressed: () {
-                  //Get.to(()=> DashboardView());
-                  Get.to(()=> LocalBusinessDashboardView());
+                  if(choseRoleController.selectedIndex.value == 0){
+                    Get.to(()=> DashboardView());
+                  }else{
+                    Get.to(() => LocalBusinessDashboardView());
+                  }
                 },
                 gradientColors: AppColors.buttonColor,
               ),

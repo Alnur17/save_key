@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../common/app_color/app_colors.dart';
-import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/app_text_style/styles.dart';
 import '../../../../../common/size_box/custom_sizebox.dart';
 
@@ -27,6 +26,7 @@ class PersonalStatCard extends StatelessWidget {
       height: height.h,
       padding: const EdgeInsets.all(8).r,
       decoration: BoxDecoration(
+        color: AppColors.splashBackground,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: AppColors.greenNormal),
       ),

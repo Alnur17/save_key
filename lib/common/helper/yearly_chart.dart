@@ -64,7 +64,7 @@ class YearlyChart extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 12),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.grey.shade100,
+                      color: AppColors.splashBackground,
                     ),
                     child: DropdownButton<String>(
                       padding: EdgeInsets.zero,

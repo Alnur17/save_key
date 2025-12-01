@@ -14,9 +14,7 @@ import '../../../../../common/size_box/custom_sizebox.dart';
 import '../../../../../common/widgets/custom_list_tile.dart';
 import '../../../../../common/widgets/custom_popup.dart';
 import '../../../auth/login/views/login_view.dart';
-import '../../../member/account/controllers/account_controller.dart';
 import '../../../member/account/views/change_password_view.dart';
-import '../../../member/account/views/edit_profile_view.dart';
 import '../../../member/account/views/faq_view.dart';
 import '../../../member/account/views/privacy_and_policy_view.dart';
 import '../../../member/account/views/terms_and_condition_view.dart';
@@ -33,7 +31,7 @@ class LocalBusinessAccountView extends StatefulWidget {
 }
 
 class _LocalBusinessAccountViewState extends State<LocalBusinessAccountView> {
-  final AccountController accountController = Get.put(AccountController());
+  final LocalBusinessAccountController localBusinessAccountController = Get.put(LocalBusinessAccountController());
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +64,7 @@ class _LocalBusinessAccountViewState extends State<LocalBusinessAccountView> {
             sh20,
             Center(
               child: Obx(() {
-                final imagePath = accountController.profileImageUrl.value;
+                final imagePath = localBusinessAccountController.profileImageUrl.value;
                 return Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),

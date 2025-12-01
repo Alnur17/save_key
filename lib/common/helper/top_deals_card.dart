@@ -45,7 +45,7 @@ class TopDealsCard extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4).r,
                 decoration: BoxDecoration(
-                  color: isActive ? AppColors.greenLight : AppColors.redLight,
+                  color: isActive ? AppColors.splashBackground : AppColors.redLight,
                   borderRadius: BorderRadius.circular(6).r,
                 ),
                 child: Text(

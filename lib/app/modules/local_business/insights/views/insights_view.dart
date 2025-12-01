@@ -72,6 +72,8 @@ class _InsightsViewState extends State<InsightsView> {
                 text: 'Export Analytics to CSV',
                 onPressed: () {},
                 gradientColors: AppColors.buttonColor,
+                centerImageWithText: true,
+                imageAssetPath: AppImages.download,
               ),
             ],
           ),

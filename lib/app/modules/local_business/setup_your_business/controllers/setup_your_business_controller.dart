@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
 
 class SetupYourBusinessController extends GetxController {
+  var selectedBusinessType = ''.obs;
+  var selectedDiscountType = ''.obs;
+
   final categories = [
     'All',
     'Furniture',
@@ -13,19 +16,20 @@ class SetupYourBusinessController extends GetxController {
   // default selected
   var selectedCategory = 'Clothing'.obs;
 
+  void changeBusinessType(String? value) {
+    if (value != null) {
+      selectedBusinessType.value = value;
+    }
+  }
+
+  void changeDiscountType(String? value) {
+    if (value != null) {
+      selectedDiscountType.value = value;
+    }
+  }
+
   void selectCategory(String category) {
     selectedCategory.value = category;
   }
 
-  final businessType = [
-    'In-Person Discounts',
-    'Online Discounts',
-  ];
-
-  // default selected
-  var selectedBusinessType = 'In-Person Discounts'.obs;
-
-  void selectBusinessType(String type) {
-    selectedBusinessType.value = type;
-  }
 }
