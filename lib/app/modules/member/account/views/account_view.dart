@@ -10,11 +10,9 @@ import 'package:save_key/app/modules/member/account/views/notification_manage_vi
 import 'package:save_key/app/modules/member/account/views/privacy_and_policy_view.dart';
 import 'package:save_key/app/modules/member/account/views/terms_and_condition_view.dart';
 import 'package:save_key/common/app_color/app_colors.dart';
-import 'package:save_key/common/app_text_style/styles.dart';
 
 import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/size_box/custom_sizebox.dart';
-import '../../../../../common/widgets/custom_button.dart';
 import '../../../../../common/widgets/custom_list_tile.dart';
 import '../../../../../common/widgets/custom_popup.dart';
 import '../../../auth/login/views/login_view.dart';

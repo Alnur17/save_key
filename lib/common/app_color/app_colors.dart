@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   static const mainColor = Color(0xFFFFFFFF);
   static const background = Color(0xFFEDEDED);
+  static const splashBackground = Color(0xFFE9EFEB);
   static const logoBgColor = Color(0xFFECF7FF);
   static const bottomNavbar = Color(0xffF9F9F9);
   static const textColor = Color(0xff409E7A);
@@ -13,7 +14,7 @@ class AppColors {
   static const bottomBarText = Color(0xFFDE54B1);
   static const gradientColor = [Color(0xff6ECC96), Color(0xff0BE4F3), Color(0xff57C78F)];
   static const authBackColor = [Color(0xffF9FAFC), Color(0xffFBF6EA)];
-  static const buttonColor = [Color(0xff0BF3E7), Color(0xff1CD77A)];
+  static const buttonColor = [Color(0xff76A976), Color(0xff556D55)];
   static const gradientColorBlue = [Color(0xff63B3ED), Color(0xff3182CE)];
   static const gradientColorGrey = [Color(0xffF3F3F5), Color(0xffF3F3F5)];
   static const gradientColorGreen = [Color(0xff99ECCC), Color(0xff54B18D)];
@@ -30,7 +31,7 @@ class AppColors {
   static const black100 = Color(0xff5C5C5C);
   static const black200 = Color(0xff3C3C3C);
   static const green = Color(0xff00BA11);
-  static const greenNormal = Color(0xff57C78F);
+  static const greenNormal = Color(0xff556D55);
   static const darkGreen = Color(0xff0c5514);
   static const borderColor = Color(0xffCACACA);
   static const blueLight = Color(0xff105FCB);
@@ -38,7 +39,7 @@ class AppColors {
   static const blueDark = Color(0xff283891);
   static const lightBlue = Color(0xff40C4FF);
   static const hintColor = Color(0xff8b8989);
-  static const greenLight = Color(0xffCBEEDC);
+  static const greenLight = Color(0xff76A976);
   static const whiteDark = Color(0xffBEBEBE);
   static const primaryColor = Color(0xff409E7A);
   static const orange = Color(0xffE47637);
@@ -47,5 +48,5 @@ class AppColors {
   static const darkRed = Color(0xffBE080B);
   static const red = Color(0xffff3c00);
   static const redLight = Color(0xfff3b8b8);
-  static const purple = Color(0xff5366BE);
+  static const purple = Color(0xff8884d8);
 }

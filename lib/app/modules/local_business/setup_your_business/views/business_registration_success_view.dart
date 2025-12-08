@@ -28,12 +28,12 @@ class BusinessRegistrationSuccessView extends GetView {
             ),
             sh20,
             Text(
-              'Congratulation',
+              'Congratulation 🎉',
               style: h2,
             ),
             sh5,
             Text(
-              'Your subscription is now active. You can now start enjoying exclusive discounts and perks.',
+              'Your business has been approved. You can now access your partner dashboard and start creating deals.',
               style: h5,
               textAlign: TextAlign.center,
             ),
@@ -41,9 +41,9 @@ class BusinessRegistrationSuccessView extends GetView {
             CustomButton(
               text: 'Go to Login',
               onPressed: () {
-                Get.offAll(() => LoginView());
+                Get.to(()=> LoginView());
               },
-              borderColor: AppColors.greenNormal,
+              gradientColors: AppColors.buttonColor,
             ),
           ],
         ),

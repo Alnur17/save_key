@@ -80,7 +80,7 @@ class CustomButton extends StatelessWidget {
               style: textStyle ??
                   h5.copyWith(
                     fontWeight: FontWeight.w700,
-                    color: textColor ?? AppColors.black,
+                    color: textColor ?? AppColors.white,
                   ),
             ),
             //if (imageAssetPath != null && centerImageWithText != true)

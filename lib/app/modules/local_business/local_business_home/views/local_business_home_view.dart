@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:save_key/app/data/dummy_data.dart';
-import 'package:save_key/app/modules/local_business/local_business_home/views/local_business_search_view.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_images/app_images.dart';
@@ -12,9 +11,7 @@ import '../../../../../common/helper/custom_profile_image.dart';
 import '../../../../../common/helper/top_deals_card.dart';
 import '../../../../../common/helper/yearly_chart.dart';
 import '../../../../../common/size_box/custom_sizebox.dart';
-import '../../../../../common/widgets/custom_textfield.dart';
 import '../../../member/savings/model/persional_stat_card.dart';
-import '../../deals/views/create_deals_view.dart';
 import '../controllers/local_business_home_controller.dart';
 
 class LocalBusinessHomeView extends GetView<LocalBusinessHomeController> {
@@ -27,7 +24,8 @@ class LocalBusinessHomeView extends GetView<LocalBusinessHomeController> {
       appBar: AppBar(
         backgroundColor: AppColors.white,
         scrolledUnderElevation: 0,
-        toolbarHeight: 150.h,
+        //toolbarHeight: 150.h,
+        toolbarHeight: 80.h,
         titleSpacing: 20.w,
         title: Column(
           children: [
@@ -62,28 +60,18 @@ class LocalBusinessHomeView extends GetView<LocalBusinessHomeController> {
                     ),
                   ],
                 ),
-                Spacer(),
-                GestureDetector(
-                  onTap: () {
-                    Get.to(()=> CreateDealsView());
-                  },
-                  child: Image.asset(
-                    AppImages.addCircle,
-                    scale: 4,
-                  ),
-                ),
               ],
             ),
-            sh16,
-            GestureDetector(
-              onTap: () {
-                Get.to(() => LocalBusinessSearchView());
-              },
-              child: CustomTextField(
-                hintText: 'Looking for...',
-                isEditable: false,
-              ),
-            ),
+            // sh16,
+            // GestureDetector(
+            //   onTap: () {
+            //     Get.to(() => LocalBusinessSearchView());
+            //   },
+            //   child: CustomTextField(
+            //     hintText: 'Looking for...',
+            //     isEditable: false,
+            //   ),
+            // ),
           ],
         ),
       ),
@@ -98,45 +86,19 @@ class LocalBusinessHomeView extends GetView<LocalBusinessHomeController> {
               children: [
                 Expanded(
                   child: PersonalStatCard(
-                    title: 'Today\'s',
-                    amount: '12',
-                    label: 'Redemptions',
-                    iconPath: AppImages.dealRedeem,
-                    isPositive: true,
-                  ),
-                ),
-                sw12,
-                Expanded(
-                  child: PersonalStatCard(
                     title: 'This Month',
                     amount: '248',
                     label: 'Redemptions',
                     iconPath: AppImages.dealRedeem,
-                    isPositive: true,
                   ),
                 ),
-              ],
-            ),
-            sh16,
-            Row(
-              children: [
+                sw12,
                 Expanded(
                   child: PersonalStatCard(
                     title: 'Active Deals',
                     amount: '720',
                     label: 'Live Offer',
                     iconPath: AppImages.totalVisit,
-                    isPositive: true,
-                  ),
-                ),
-                sw12,
-                Expanded(
-                  child: PersonalStatCard(
-                    title: 'Total Sales',
-                    amount: '\$1,930',
-                    label: 'From all deals',
-                    iconPath: AppImages.avgSaving,
-                    isPositive: true,
                   ),
                 ),
               ],
@@ -169,12 +131,14 @@ class LocalBusinessHomeView extends GetView<LocalBusinessHomeController> {
                     itemBuilder: (context, index) {
                       final offer = DummyData.offers[index];
                       return Padding(
-                        padding: EdgeInsets.only(bottom: index == DummyData.offers.length - 1 ? 0 : 8),
+                        padding: EdgeInsets.only(
+                            bottom:
+                                index == DummyData.offers.length - 1 ? 0 : 8),
                         child: TopDealsCard(
                           title: offer['title'] as String,
-                          category: offer['category'] as String,
+                          // category: offer['category'] as String,
                           redemptions: offer['redemptions'] as String,
-                          sales: offer['sales'] as String,
+                          //sales: offer['sales'] as String,
                           status: offer['status'] as String,
                           isActive: offer['isActive'] as bool,
                         ),

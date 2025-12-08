@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:save_key/app/modules/member/home/views/qr_code_view.dart';
+import 'package:save_key/common/helper/contact_info_card.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_images/app_images.dart';
@@ -43,7 +44,7 @@ class DiscountDetailsView extends GetView {
               Stack(
                 children: [
                   Container(
-                    height: 200,
+                    height: 170.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
@@ -59,24 +60,20 @@ class DiscountDetailsView extends GetView {
                     ),
                   ),
                   Positioned(
-                    top: 0,
-                    right: 0,
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16).r,
-                      alignment: Alignment.center,
-                      height: 35.h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          topRight: Radius.circular(20),
+                    top: 12,
+                    right: 12,
+                    child: GestureDetector(
+                      onTap: (){},
+                      child: Container(
+                        height: 35.h,
+                        width: 35.w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(40),
+                          color: AppColors.black100,
                         ),
-                        color: AppColors.greenLight,
-                      ),
-                      child: Text(
-                        'Saved \$20',
-                        style: h5.copyWith(
-                          color: AppColors.greenNormal,
-                          fontWeight: FontWeight.bold,
+                        child: Image.asset(
+                          AppImages.favoriteOutline,
+                          scale: 4,
                         ),
                       ),
                     ),
@@ -131,6 +128,13 @@ class DiscountDetailsView extends GetView {
                         ),
                       ],
                     ),
+                    sh8,
+                    Text(
+                      'A veggie burger is a plant-based patty served in a burger bun, made from ingredients like vegetables legumes in beans.',
+                      style: h5,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                     sh20,
                     Text(
                       'Vegetable Burger',
@@ -147,7 +151,7 @@ class DiscountDetailsView extends GetView {
                     ),
                     sh16,
                     Text(
-                      'All Information',
+                      'Discount Information',
                       style: h3,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
@@ -160,69 +164,48 @@ class DiscountDetailsView extends GetView {
                     ),
                     Divider(),
                     DetailsWidget(
-                      iconAsset: AppImages.discount,
-                      label: 'Save',
-                      time: '\$20',
-                    ),
-                    Divider(),
-                    DetailsWidget(
                       iconAsset: AppImages.location,
                       label: 'Location',
                       time: 'Mohakhali, gulsan 01',
                     ),
                     Divider(),
                     DetailsWidget(
-                      iconAsset: AppImages.calender,
-                      label: 'Date',
-                      time: '23 sep 2025',
+                      iconAsset: AppImages.discount,
+                      label: 'Can be used',
+                      time: '2/5 times',
                     ),
                     Divider(),
                     DetailsWidget(
-                      iconAsset: AppImages.clock,
-                      label: 'Start time',
-                      time: '06:00 PM',
+                      iconAsset: AppImages.instagram,
+                      label: 'Instagram',
+                      time: 'instagram.com/sultan',
                     ),
                     Divider(),
-                    DetailsWidget(
-                      iconAsset: AppImages.clock,
-                      label: 'End time',
-                      time: '09:00 PM',
+                    sh16,
+                    Text(
+                      'Contact Information',
+                      style: h3,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    Divider(),
-                    DetailsWidget(
-                      iconAsset: AppImages.scannerSmall,
-                      label: 'Same QR code can use',
-                      time: '05 Times',
+                    sh12,
+                    ContactInfoCard(
+                      icon: AppImages.callCircle,
+                      text: '+1 (555) 123-4567',
+                      onTap: () {
+                        print("Call clicked");
+                      },
                     ),
-                    Divider(),
-                    DetailsWidget(
-                      iconAsset: AppImages.website,
-                      label: 'Website',
-                      time: 'www.dailydaawat.com',
-                    ),
-                    Divider(),
-                    DetailsWidget(
-                      iconAsset: AppImages.facebookSmall,
-                      label: 'Facebook',
-                      time: 'fb/dailydaawat',
-                    ),
-                    Divider(),
-                    DetailsWidget(
-                      iconAsset: AppImages.linkedInSmall,
-                      label: 'LinkedIn',
-                      time: 'ld/dailydaawat',
+                    sh12,
+                    ContactInfoCard(
+                      icon: AppImages.mailCircle,
+                      text: 'sultanmdalnur@gmail.com',
+                      onTap: () {},
                     ),
                     sh20,
                     CustomButton(
-                      text: 'QR Generate',
-                      onPressed: () {
-                        Get.to(() => QrCodeView(
-                              data: 'D-VG 458706',
-                              label: 'D-VG 458706',
-                            ));
-                      },
-                      imageAssetPath: AppImages.scannerSmall,
-                      centerImageWithText: true,
+                      text: 'Use Discount',
+                      onPressed: () {},
                       gradientColors: AppColors.buttonColor,
                     )
                   ],

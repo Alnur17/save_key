@@ -1,38 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../common/app_color/app_colors.dart';
-import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/app_text_style/styles.dart';
 import '../../../../../common/size_box/custom_sizebox.dart';
 
 class PersonalStatCard extends StatelessWidget {
   final String title;
   final String amount;
-  final String? percentage; // made optional
-  final String label;
+  final String? label;
   final String iconPath;
-  final bool isPositive;
+  final double height;
 
   const PersonalStatCard({
     super.key,
     required this.title,
     required this.amount,
-    required this.label,
+    this.label,
     required this.iconPath,
-    this.percentage,
-    this.isPositive = true,
+    this.height = 140,
   });
 
   @override
   Widget build(BuildContext context) {
-    final Color color = isPositive ? AppColors.greenNormal : AppColors.red;
-
     return Container(
-      height: 150.h,
+      height: height.h,
       padding: const EdgeInsets.all(8).r,
       decoration: BoxDecoration(
+        color: AppColors.splashBackground,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: color),
+        border: Border.all(color: AppColors.greenNormal),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,44 +38,15 @@ class PersonalStatCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(title, style: h3),
+              Expanded(child: Text(title, style: h3)),
               sw8,
               Image.asset(iconPath, scale: 4),
             ],
           ),
           sh12,
           Text(amount, style: h2),
-          sh12,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              if (percentage != null) ...[
-                Container(
-                  padding:
-                  const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: color.withOpacity(0.2),
-                  ),
-                  child: Row(
-                    children: [
-                      Image.asset(
-                        AppImages.arrowUpDown,
-                        scale: 4,
-                      ),
-                      sw5,
-                      Text(
-                        percentage!,
-                        style: h5.copyWith(color: color),
-                      ),
-                    ],
-                  ),
-                ),
-                sw8,
-              ],
-              Expanded(child: Text(label, style: h5)),
-            ],
-          ),
+          if (label != null) sh12,
+          if (label != null) Text(label!, style: h5),
         ],
       ),
     );

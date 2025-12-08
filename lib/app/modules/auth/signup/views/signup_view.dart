@@ -135,7 +135,7 @@ class SignupView extends GetView<SignupController> {
               CustomButton(
                 text: 'Sign Up',
                 onPressed: () {
-                  Get.to(()=> AddProfilePictureView(isMember: true,));
+                  Get.to(()=> AddProfilePictureView());
                 },
                 gradientColors: AppColors.buttonColor,
               ),
@@ -193,7 +193,7 @@ class SignupView extends GetView<SignupController> {
                   ],
                 ),
               ),
-              sh20,
+              sh40,
             ],
           ),
         ),

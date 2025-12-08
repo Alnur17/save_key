@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
 
-import '../modules/auth/auth_landing/bindings/auth_landing_binding.dart';
-import '../modules/auth/auth_landing/views/auth_landing_view.dart';
 import '../modules/auth/chose_role/bindings/chose_role_binding.dart';
 import '../modules/auth/chose_role/views/chose_role_view.dart';
 import '../modules/auth/forgot_password/bindings/forgot_password_binding.dart';
@@ -56,7 +54,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.LOGIN,
-      page: () => const LoginView(),
+      page: () => LoginView(),
       binding: LoginBinding(),
     ),
     GetPage(
@@ -85,11 +83,6 @@ class AppPages {
       binding: ChoseRoleBinding(),
     ),
     GetPage(
-      name: _Paths.AUTH_LANDING,
-      page: () => const AuthLandingView(),
-      binding: AuthLandingBinding(),
-    ),
-    GetPage(
       name: _Paths.SUBSCRIPTION_PLAN,
       page: () => const SubscriptionPlanView(),
       binding: SubscriptionPlanBinding(),
@@ -106,7 +99,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SAVINGS,
-      page: () => const SavingsView(),
+      page: () => const AnalyticsView(),
       binding: SavingsBinding(),
     ),
     GetPage(

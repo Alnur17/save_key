@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:save_key/app/modules/member/dashboard/views/dashboard_view.dart';
+import 'package:save_key/app/modules/auth/chose_role/controllers/chose_role_controller.dart';
 import 'package:save_key/common/widgets/custom_textfield.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
@@ -12,12 +12,16 @@ import '../../../../../common/size_box/custom_sizebox.dart';
 import '../../../../../common/widgets/custom_button.dart';
 import '../../../../../common/widgets/google_button.dart';
 import '../../../local_business/local_business_dashboard/views/local_business_dashboard_view.dart';
+import '../../../member/dashboard/views/dashboard_view.dart';
 import '../../forgot_password/views/forgot_password_view.dart';
+import '../../signup/views/local_signup_view.dart';
 import '../../signup/views/signup_view.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  const LoginView({super.key});
+  LoginView({super.key});
+
+   final ChoseRoleController choseRoleController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +30,10 @@ class LoginView extends GetView<LoginController> {
       appBar: AppBar(
         backgroundColor: AppColors.white,
         scrolledUnderElevation: 0,
+        title: Text(
+          'Login',
+          style: appBarStyle,
+        ),
         leading: GestureDetector(
             onTap: () {
               Get.back();
@@ -41,20 +49,10 @@ class LoginView extends GetView<LoginController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              sh40,
-              Image.asset(
-                AppImages.logo,
-                scale: 4,
-              ),
-              sh40,
-              Text(
-                'Login',
-                style: h1,
-              ),
               sh5,
               Text(
                 'Hi Welcome back..! Please enter your correct Information And continue',
-                style: h3.copyWith(color: AppColors.black100),
+                style: h3.copyWith(color: AppColors.black100,fontWeight: FontWeight.w400),
               ),
               sh20,
               Text(
@@ -73,6 +71,7 @@ class LoginView extends GetView<LoginController> {
               sh8,
               CustomTextField(
                 hintText: '***********',
+                sufIcon: Image.asset(AppImages.eyeClose,scale: 4),
               ),
               sh20,
               Row(
@@ -109,8 +108,11 @@ class LoginView extends GetView<LoginController> {
               CustomButton(
                 text: 'Sign In',
                 onPressed: () {
-                  //Get.to(()=> DashboardView());
-                  Get.to(()=> LocalBusinessDashboardView());
+                  if(choseRoleController.selectedIndex.value == 0){
+                    Get.to(()=> DashboardView());
+                  }else{
+                    Get.to(() => LocalBusinessDashboardView());
+                  }
                 },
                 gradientColors: AppColors.buttonColor,
               ),
@@ -152,7 +154,11 @@ class LoginView extends GetView<LoginController> {
               sh20,
               GestureDetector(
                 onTap: () {
-                  Get.to(() => SignupView());
+                  if(choseRoleController.selectedIndex.value == 0){
+                    Get.to(() => SignupView());
+                  }else{
+                    Get.to(() => LocalSignupView());
+                  }
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -168,7 +174,7 @@ class LoginView extends GetView<LoginController> {
                   ],
                 ),
               ),
-              sh20,
+              sh40,
             ],
           ),
         ),

@@ -2,16 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:save_key/app/modules/auth/login/views/login_view.dart';
 import 'package:save_key/common/app_color/app_colors.dart';
 import 'package:save_key/common/app_text_style/styles.dart';
 
 import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/size_box/custom_sizebox.dart';
-import '../../../../../common/widgets/custom_button.dart';
+import 'business_registration_success_view.dart';
 
-class RequestSubmittedView extends GetView {
+class RequestSubmittedView extends StatefulWidget {
   const RequestSubmittedView({super.key});
+
+  @override
+  State<RequestSubmittedView> createState() => _RequestSubmittedViewState();
+}
+
+class _RequestSubmittedViewState extends State<RequestSubmittedView> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+      const Duration(seconds: 3),
+      () => Get.to(() => BusinessRegistrationSuccessView()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,13 +75,7 @@ class RequestSubmittedView extends GetView {
                 textAlign: TextAlign.center,
               ),
               sh20,
-              CustomButton(
-                text: 'Go to Login',
-                onPressed: () {
-                  Get.to(()=> LoginView());
-                },
-                gradientColors: AppColors.buttonColor,
-              ),
+
             ],
           ),
         ),

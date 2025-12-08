@@ -30,6 +30,7 @@ class ResetSuccessView extends GetView {
               Text(
                 'Password Reset Successfully',
                 style: h2,
+                textAlign: TextAlign.center,
               ),
               sh5,
               Text(

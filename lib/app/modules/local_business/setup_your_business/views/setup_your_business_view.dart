@@ -10,6 +10,7 @@ import 'package:save_key/common/widgets/custom_textfield.dart';
 
 import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/size_box/custom_sizebox.dart';
+import '../../../../../common/widgets/custom_dropdown.dart';
 import '../controllers/setup_your_business_controller.dart';
 
 class SetupYourBusinessView extends StatelessWidget {
@@ -44,6 +45,48 @@ class SetupYourBusinessView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               sh16,
+              Text('Choose Business Type', style: h3),
+              sh8,
+              Obx(
+                () => Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ReusableDropdown(
+                      options: [
+                        'In-Person Discounts',
+                        'In-Person with Promo Code Discount',
+                        'Online Discount'
+                      ],
+                      hintText: 'Select a type',
+                      selectedValue: controller.selectedBusinessType.value,
+                      onChanged: (value) =>
+                          controller.changeBusinessType(value),
+                    ),
+                  ],
+                ),
+              ),
+              sh20,
+              Text('Discount Type', style: h3),
+              sh8,
+              Obx(
+                () => Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ReusableDropdown(
+                      options: [
+                        'Weekly',
+                        'Monthly',
+                        'Unlimited'
+                      ],
+                      hintText: 'Select Discount type',
+                      selectedValue: controller.selectedDiscountType.value,
+                      onChanged: (value) =>
+                          controller.changeDiscountType(value),
+                    ),
+                  ],
+                ),
+              ),
+              sh20,
               Text(
                 'Business Address',
                 style: h3,
@@ -61,42 +104,6 @@ class SetupYourBusinessView extends StatelessWidget {
               CustomTextField(
                 height: 100,
                 hintText: 'Write here...',
-              ),
-              sh20,
-              Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Open time',
-                          style: h3,
-                        ),
-                        sh8,
-                        CustomTextField(
-                          hintText: '10:00 AM',
-                        ),
-                      ],
-                    ),
-                  ),
-                  sw8,
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Close time',
-                          style: h3,
-                        ),
-                        sh8,
-                        CustomTextField(
-                          hintText: '09:00 PM',
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
               ),
               sh20,
               Text('Category', style: h3),
@@ -139,31 +146,22 @@ class SetupYourBusinessView extends StatelessWidget {
               ),
               sh20,
               Text(
-                'Linkedin',
+                'Instagram',
                 style: h3,
               ),
               sh8,
               CustomTextField(
-                hintText: 'www.linkedin.com/username',
-              ),
-              sh20,
-              Text(
-                'Facebook',
-                style: h3,
-              ),
-              sh8,
-              CustomTextField(
-                hintText: 'www.facebook.com/username',
+                hintText: 'www.instagram.com/username',
               ),
               sh20,
               CustomButton(
                 text: 'Request',
                 onPressed: () {
-                  Get.to(()=> RequestSubmittedView());
+                  Get.to(() => RequestSubmittedView());
                 },
                 gradientColors: AppColors.buttonColor,
               ),
-              sh20,
+              sh60,
             ],
           ),
         ),

@@ -3,22 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:save_key/app/modules/auth/auth_landing/views/auth_landing_view.dart';
-import 'package:save_key/app/modules/member/account/controllers/account_controller.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_images/app_images.dart';
 import '../../../../../common/app_text_style/styles.dart';
 import '../../../../../common/size_box/custom_sizebox.dart';
 import '../../../../../common/widgets/custom_button.dart';
+import '../../../../../common/widgets/custom_dropdown.dart';
 import '../../../../../common/widgets/custom_textfield.dart';
 import '../../setup_your_business/controllers/setup_your_business_controller.dart';
+import '../controllers/local_business_account_controller.dart';
 
 class EditBusinessInfoView extends StatelessWidget {
   EditBusinessInfoView({super.key});
 
   final controller = Get.put(SetupYourBusinessController());
-  final AccountController  accountController = Get.find();
+  final LocalBusinessAccountController localBusinessAccountController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,10 @@ class EditBusinessInfoView extends StatelessWidget {
       appBar: AppBar(
         scrolledUnderElevation: 0,
         backgroundColor: AppColors.white,
-        title: Text('Edit Business Info',style: appBarStyle,),
+        title: Text(
+          'Edit Business Info',
+          style: appBarStyle,
+        ),
         leading: Padding(
           padding: EdgeInsets.only(left: 12).r,
           child: GestureDetector(
@@ -63,27 +66,30 @@ class EditBusinessInfoView extends StatelessWidget {
                         radius: 50,
                         backgroundColor: AppColors.white,
                         child: ClipOval(
-                          child: accountController.selectedImage.value != null
+                          child: localBusinessAccountController
+                                      .selectedImage.value !=
+                                  null
                               ? Image.file(
-                            accountController.selectedImage.value!,
-                            height: Get.height.h,
-                            width: Get.width.w,
-                            fit: BoxFit.cover,
-                          )
+                                  localBusinessAccountController
+                                      .selectedImage.value!,
+                                  height: Get.height.h,
+                                  width: Get.width.w,
+                                  fit: BoxFit.cover,
+                                )
                               : CachedNetworkImage(
-                            imageUrl: AppImages.profileImage,
-                            height: Get.height.h,
-                            width: Get.width.w,
-                            fit: BoxFit.cover,
-                            placeholder: (context, url) => const Center(
-                              child: CircularProgressIndicator(
-                                color: AppColors.greenLight,
-                              ),
-                            ),
-                            errorWidget: (context, url, error) =>
-                            const Icon(Icons.error,
-                                color: Colors.red),
-                          ),
+                                  imageUrl: AppImages.profileImage,
+                                  height: Get.height.h,
+                                  width: Get.width.w,
+                                  fit: BoxFit.cover,
+                                  placeholder: (context, url) => const Center(
+                                    child: CircularProgressIndicator(
+                                      color: AppColors.greenLight,
+                                    ),
+                                  ),
+                                  errorWidget: (context, url, error) =>
+                                      const Icon(Icons.error,
+                                          color: Colors.red),
+                                ),
                         ),
                       ),
                     ),
@@ -91,7 +97,8 @@ class EditBusinessInfoView extends StatelessWidget {
                       bottom: 0,
                       right: 0,
                       child: GestureDetector(
-                        onTap: () => accountController.pickImageFromGallery(),
+                        onTap: () => localBusinessAccountController
+                            .pickImageFromGallery(),
                         child: Image.asset(
                           AppImages.editCircle,
                           scale: 4,
@@ -104,7 +111,7 @@ class EditBusinessInfoView extends StatelessWidget {
             ),
             sh40,
             Text(
-              'User name',
+              'Business name',
               style: h3,
             ),
             sh8,
@@ -139,6 +146,42 @@ class EditBusinessInfoView extends StatelessWidget {
               hintText: 'Enter Your address',
             ),
             sh20,
+            Text('Choose Business Type', style: h3),
+            sh8,
+            Obx(
+              () => Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ReusableDropdown(
+                    options: [
+                      'In-Person Discounts',
+                      'In-Person with Promo Code Discount',
+                      'Online Discount'
+                    ],
+                    hintText: 'Select a type',
+                    selectedValue: controller.selectedBusinessType.value,
+                    onChanged: (value) => controller.changeBusinessType(value),
+                  ),
+                ],
+              ),
+            ),
+            sh20,
+            Text('Discount Type', style: h3),
+            sh8,
+            Obx(
+              () => Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ReusableDropdown(
+                    options: ['Weekly', 'Monthly', 'Unlimited'],
+                    hintText: 'Select Discount type',
+                    selectedValue: controller.selectedDiscountType.value,
+                    onChanged: (value) => controller.changeDiscountType(value),
+                  ),
+                ],
+              ),
+            ),
+            sh20,
             Text(
               'Description',
               style: h3,
@@ -147,42 +190,6 @@ class EditBusinessInfoView extends StatelessWidget {
             CustomTextField(
               height: 100,
               hintText: 'Write here...',
-            ),
-            sh20,
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Open time',
-                        style: h3,
-                      ),
-                      sh8,
-                      CustomTextField(
-                        hintText: 'Enter Your address',
-                      ),
-                    ],
-                  ),
-                ),
-                sw8,
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Close time',
-                        style: h3,
-                      ),
-                      sh8,
-                      CustomTextField(
-                        hintText: '09:00 PM',
-                      ),
-                    ],
-                  ),
-                ),
-              ],
             ),
             sh20,
             Text(
@@ -195,21 +202,12 @@ class EditBusinessInfoView extends StatelessWidget {
             ),
             sh20,
             Text(
-              'Linkedin',
+              'Instagram',
               style: h3,
             ),
             sh8,
             CustomTextField(
-              hintText: 'www.linkedin.com/username',
-            ),
-            sh20,
-            Text(
-              'Facebook',
-              style: h3,
-            ),
-            sh8,
-            CustomTextField(
-              hintText: 'www.facebook.com/username',
+              hintText: 'www.instagram.com/username',
             ),
             sh20,
             Text('Category', style: h3),
