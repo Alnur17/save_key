@@ -78,15 +78,6 @@ class CreateDealsView extends StatelessWidget {
             ),
             sh12,
             Text(
-              'Price',
-              style: h4,
-            ),
-            sh8,
-            CustomTextField(
-              hintText: 'Enter price',
-            ),
-            sh12,
-            Text(
               'Discount Type',
               style: h4,
             ),
@@ -115,48 +106,6 @@ class CreateDealsView extends StatelessWidget {
                 ],
               ),
             ),
-            // sh12,
-            // Text(
-            //   'Eligibility/Frequency',
-            //   style: h4,
-            // ),
-            // sh8,
-            // Obx(
-            //   () => ReusableDropdown(
-            //     options: [
-            //       'Once per month',
-            //       'Once per week',
-            //       'One-Time Only',
-            //       'Unlimited'
-            //     ],
-            //     hintText: 'Select a type',
-            //     selectedValue: controller.selectedEligibility.value,
-            //     onChanged: (value) => controller.changeEligibility(value),
-            //   ),
-            // ),
-            // sh12,
-            // Text(
-            //   'Schedule',
-            //   style: h4,
-            // ),
-            // sh8,
-            // Obx(
-            //   () => ReusableDropdown(
-            //     options: ['Always-on', 'Happy Hours', 'Promo Window'],
-            //     hintText: 'Select a type',
-            //     selectedValue: controller.selectedSchedule.value,
-            //     onChanged: (value) => controller.changeSchedule(value),
-            //   ),
-            // ),
-            // sh12,
-            // Text(
-            //   'Create Private Code',
-            //   style: h4,
-            // ),
-            // sh8,
-            // CustomTextField(
-            //   hintText: 'D-VG326',
-            // ),
             sh12,
             Text(
               'Location',
@@ -174,15 +123,8 @@ class CreateDealsView extends StatelessWidget {
             sh8,
             CustomTextField(
               hintText: '5 times',
-            ),sh12,
-            Text(
-              'Custom Discount Limitation',
-              style: h4,
             ),
-            sh8,
-            CustomTextField(
-              hintText: '5 times',
-            ),
+
             sh60,
           ],
         ),
