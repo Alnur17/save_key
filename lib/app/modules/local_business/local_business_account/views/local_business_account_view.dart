@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:save_key/app/modules/local_business/local_business_account/views/edit_business_info_view.dart';
 import 'package:save_key/app/modules/local_business/local_business_account/views/local_business_support_view.dart';
+import 'package:save_key/app/modules/local_business/local_business_account/views/my_gallery_images_view.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_images/app_images.dart';
@@ -119,6 +120,14 @@ class _LocalBusinessAccountViewState extends State<LocalBusinessAccountView> {
               },
               leadingImage: AppImages.changePass,
               title: 'Change  Password ',
+              trailingImage: AppImages.arrowRight,
+            ),
+            CustomListTile(
+              onTap: () {
+                Get.to(() => MyGalleryImagesView());
+              },
+              leadingImage: AppImages.photo,
+              title: 'Gallery',
               trailingImage: AppImages.arrowRight,
             ),
             CustomListTile(

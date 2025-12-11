@@ -46,6 +46,7 @@ class AppImages {
   static const email = "assets/icons/mail.png";
   static const mailCircle = "assets/icons/mail circle.png";
   static const support = "assets/icons/support.png";
+  static const photo = "assets/icons/photo.png";
   static const arrowRight = "assets/icons/arrow right.png";
   static const editProfile = "assets/icons/edit profile.png";
   static const checkBox = "assets/icons/checkbox.png";
