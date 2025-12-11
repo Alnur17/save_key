@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:save_key/app/data/dummy_data.dart';
+import 'package:save_key/app/modules/local_business/local_business_home/views/check_id_view.dart';
+import 'package:save_key/common/widgets/custom_button.dart';
 
 import '../../../../../common/app_color/app_colors.dart';
 import '../../../../../common/app_images/app_images.dart';
@@ -74,6 +76,19 @@ class LocalBusinessHomeView extends GetView<LocalBusinessHomeController> {
             // ),
           ],
         ),
+        actions: [
+          // CustomButton(text: "Upload", onPressed: (){})
+          CustomButton(
+            text: 'Check ID',
+            width: 120,
+            height: 40,
+            onPressed: () {
+              Get.to(() => CheckIdView());
+            },
+            gradientColors: AppColors.buttonColor,
+          ),
+          sw10,
+        ],
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(
