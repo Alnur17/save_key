@@ -6,7 +6,7 @@ class AppColors {
   static const splashBackground = Color(0xFFE9EFEB);
   static const logoBgColor = Color(0xFFECF7FF);
   static const bottomNavbar = Color(0xffF9F9F9);
-  static const textColor = Color(0xff409E7A);
+  static const textColor = Color(0xff556D55);
   static const blueTurquoise = Color(0xff00AEEF);
   static const blurBack = Color(0x8D8D8D6B);
   static const textFieldBag = Color(0xFFF3F3F5);

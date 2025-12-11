@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:save_key/app/modules/member/home/views/business_profile_view.dart';
 import 'package:save_key/app/modules/member/home/views/qr_code_view.dart';
 import 'package:save_key/common/helper/contact_info_card.dart';
 
@@ -104,11 +105,16 @@ class DiscountDetailsView extends GetView {
                         ),
                         sw8,
                         Expanded(
-                          child: Text(
-                            'Daily Daawat-Gulshan 1',
-                            style: h3,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                          child: GestureDetector(
+                            onTap: (){
+                              Get.to(() => BusinessProfileView());
+                            },
+                            child: Text(
+                              'Daily Daawat-Gulshan 1',
+                              style: h3,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
                         ),
                         sw8,
